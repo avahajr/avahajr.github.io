@@ -3,13 +3,17 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8" />
-    <title>About Me - Ava Hajratwala</title>
-</head>
+    <!-- Standard Meta -->
+    <meta charset="UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 
-<script src="https://cdn.jsdelivr.net/npm/jquery@3.6.3/dist/jquery.min.js"></script>
-<link rel="stylesheet" type="text/css" href="semantic/dist/semantic.min.css">
-<script src="semantic/dist/semantic.min.js"></script>
+    <!-- Site specific -->
+    <title>About me - Ava Hajratwala</title>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.3/dist/jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="semantic/dist/semantic.min.css">
+    <script src="semantic/dist/semantic.min.js"></script>
+</head>
 
 <header>
 <div class="ui hidden divider"></div>
@@ -20,15 +24,16 @@
             <a class="active item">About Me</a>
             <a href="https://avahajr.github.io/projects.html" class="item">Projects</a>
             <a href="https://avahajr.github.io/resume.html" class="item">Resume</a>
-          </div> 
+        </div> 
     </div>
 </header>
+
 <div class="ui hidden divider"></div>
-<div class="ui container">
-    <div class="ui divided grid">
-    
+
+<div class="ui stackable three column divided grid container">
+    <div class="row">
         <div class="three wide column">
-            <!-- image and stats column --> 
+            <!-- image and hobbies column --> 
             <img class="ui medium circular image" src="/images/pfp.png">
 
             <div class="ui hidden divider"></div>
@@ -36,31 +41,32 @@
             <!-- Hobbies --> 
             <div class="ui horizontal center divider">Hobbies</div>
             <div class="ui hidden divider"></div>
-            <div class="ui center aligned column grid">
-                <span data-tooltip="Classical guitarist for 15 years" data-position="left center">
-                    <em data-emoji=":guitar:" class="small"></em>
-                </span>
-                <span data-tooltip="Saxophonist for 9 years" >
-                    <em data-emoji=":saxophone:" class="small"></em>
-                </span>
-                <span data-tooltip="Watercolor painter" data-position="right center">
-                    <em data-emoji=":art:" class="small"></em>
-                </span>
-                <span data-tooltip="Fisher-woman" data-position="left center">
-                    <em data-emoji=":fishing_pole_and_fish:" class="small"></em>
-                </span>
-                <span data-tooltip="Student of AI ethics" data-position="right center">
-                    <em data-emoji=":brain:" class="small"></em>
-                </span>
+            <div class="ui center aligned stackable column grid">
+                <div class="row">
+                    <span data-tooltip="Classical guitarist" data-position="left center">
+                        <em data-emoji=":guitar:" class="small"></em>
+                    </span>
+                    <span data-tooltip="Saxophonist" >
+                        <em data-emoji=":saxophone:" class="small"></em>
+                    </span>
+                    <span data-tooltip="Watercolor painter" data-position="right center">
+                        <em data-emoji=":art:" class="small"></em>
+                    </span>
+                </div>
+                <div class="row">
+                    <span data-tooltip="Fisher-woman" data-position="left center">
+                        <em data-emoji=":fishing_pole_and_fish:" class="small"></em>
+                    </span>
+                    <span data-tooltip="Student of AI ethics" data-position="right center">
+                        <em data-emoji=":brain:" class="small"></em>
+                    </span>
+                </div>
             </div>
 
             <div class="ui hidden divider"></div>
         
             <!-- Academic info --> 
             <div class="ui horizontal center divider">Education</div>
-
-        
-            
         </div>
         
         <div class="ten wide column">
@@ -75,6 +81,7 @@
         </div>
     </div>
 </div>
+
 <div class="ui hidden divider"></div>
 
 <footer class="blue ui vertical footer segment">

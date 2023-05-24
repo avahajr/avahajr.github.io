@@ -1,33 +1,319 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 
 <head>
-    <meta charset="UTF-8" />
-    <title>Projects - Ava Hajratwala</title>
+	<!-- Standard Meta -->
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+	<!-- Site Properties -->
+	<title>Projects - Ava Hajratwala</title>
+	<link rel="stylesheet" type="text/css" href="semantic/dist/components/reset.css">
+	<link rel="stylesheet" type="text/css" href="semantic/dist/components/site.css">
+
+	<link rel="stylesheet" type="text/css" href="semantic/dist/components/container.css">
+	<link rel="stylesheet" type="text/css" href="semantic/dist/components/grid.css">
+	<link rel="stylesheet" type="text/css" href="semantic/dist/components/header.css">
+	<link rel="stylesheet" type="text/css" href="semantic/dist/components/image.css">
+	<link rel="stylesheet" type="text/css" href="semantic/dist/components/menu.css">
+
+	<link rel="stylesheet" type="text/css" href="semantic/dist/components/divider.css">
+	<link rel="stylesheet" type="text/css" href="semantic/dist/components/dropdown.css">
+	<link rel="stylesheet" type="text/css" href="semantic/dist/components/segment.css">
+	<link rel="stylesheet" type="text/css" href="semantic/dist/components/button.css">
+	<link rel="stylesheet" type="text/css" href="semantic/dist/components/list.css">
+	<link rel="stylesheet" type="text/css" href="semantic/dist/components/icon.css">
+	<link rel="stylesheet" type="text/css" href="semantic/dist/components/sidebar.css">
+	<link rel="stylesheet" type="text/css" href="semantic/dist/components/transition.css">
+	<link rel="stylesheet" type="text/css" href="semantic/dist/components/card.css">
+	<link rel="stylesheet" type="text/css" href="semantic/dist/components/label.css">
+
+	<style type="text/css">
+		.hidden.menu {
+			display: none;
+		}
+		.masthead.segment {
+			min-height: 150px;
+			padding: .5em 0em;
+		}
+
+		.masthead .logo.item img {
+			margin-right: 1em;
+		}
+
+		.masthead .ui.menu .ui.button {
+			margin-left: 0.5em;
+		}
+
+		.masthead h1.ui.header {
+			margin-top: 1.5em;
+			margin-bottom: 1em;
+			font-size: 3em;
+			font-weight: bold;
+		}
+
+		.masthead h2 {
+			font-size: 1.7em;
+			font-weight: normal;
+		}
+
+		.ui.vertical.stripe {
+			padding: 8em 0em;
+		}
+
+		.ui.vertical.stripe h3 {
+			font-size: 2em;
+		}
+
+		.ui.vertical.stripe .button+h3,
+		.ui.vertical.stripe p+h3 {
+			margin-top: 3em;
+		}
+
+		.ui.vertical.stripe .floated.image {
+			clear: both;
+		}
+
+		.ui.vertical.stripe p {
+			font-size: 1.33em;
+		}
+
+		.ui.vertical.stripe .horizontal.divider {
+			margin: 3em 0em;
+		}
+
+		.quote.stripe.segment {
+			padding: 0em;
+		}
+
+		.quote.stripe.segment .grid .column {
+			padding-top: 5em;
+			padding-bottom: 5em;
+		}
+
+		.footer.segment {
+			padding: 5em 0em;
+		}
+
+		.secondary.pointing.menu .toc.item {
+			display: none;
+		}
+
+		@media only screen and (max-width: 700px) {
+			.ui.fixed.menu {
+				display: none !important;
+			}
+
+			.secondary.pointing.menu .item,
+			.secondary.pointing.menu .menu {
+				display: none;
+			}
+
+			.secondary.pointing.menu .toc.item {
+				display: block;
+			}
+
+			.masthead.segment {
+				min-height: 250px;
+			}
+
+			.masthead h1.ui.header {
+				font-size: 2em;
+				margin-top: 1em;
+				color: #669bcf;
+			}
+
+			.masthead h2 {
+				margin-top: 0.5em;
+				font-size: 1.5em;
+			}
+
+		}
+	</style>
+
+	<script src="assets/library/jquery.min.js"></script>
+	<script src="semantic/dist/components/visibility.js"></script>
+	<script src="semantic/dist/components/sidebar.js"></script>
+	<script src="semantic/dist/components/transition.js"></script>
+	<script>
+		$(document)
+    .ready(function() {
+
+      // fix menu when passed
+      $('.masthead')
+        .visibility({
+          once: false,
+          onBottomPassed: function() {
+            $('.fixed.menu').transition('fade in');
+          },
+          onBottomPassedReverse: function() {
+            $('.fixed.menu').transition('fade out');
+          }
+        })
+      ;
+
+      // create sidebar and attach to menu open
+      $('.ui.sidebar')
+        .sidebar('attach events', '.toc.item')
+      ;
+
+    })
+  ;
+	</script>
 </head>
 
-<script src="https://cdn.jsdelivr.net/npm/jquery@3.6.3/dist/jquery.min.js"></script>
-<link rel="stylesheet" type="text/css" href="semantic/dist/semantic.min.css">
-<script src="semantic/dist/semantic.min.js"></script>
+<body>
 
-<header>
-    <div class="ui hidden divider"></div>
-    
-    <div class="ui container">
-        <h1>Ava Hajratwala</h1>
-        <div class="ui top sticky secondary pointing menu">
-            <a href="https://avahajr.github.io/index.html" class="item">About Me</a>
-            <a class="item active">Projects</a>
-            <a class="item">Resume</a>
-          </div> 
-    </div>
-</header>
-<div class="ui hidden divider"></div>
+	<!-- Following Menu -->
+	<!-- <div class="ui large top fixed hidden menu">
+		<div class="ui container">
+			<a class="item" href="https://avahajr.github.io/">About Me</a>
+			<a class="active item">Projects</a>
+			<a class="item">Resume</a>
+		</div>
+	</div>  -->
 
-<div class="ui container">
-    <div class="ui blue center aligned inverted segment">
-        <h2>
-        Projects
-        </h2>
-    </div>
-</div>
+	<!-- Sidebar Menu -->
+	<!-- <div class="ui vertical inverted sidebar menu">
+		<a class="item" href="https://avahajr.github.io/">About Me</a>
+		<a class="active item">Projects</a>
+		<a class="item">Resume</a>
+	</div>  -->
+
+
+	<!-- Page Contents -->
+	<div class="pusher">
+		<div class="ui inverted blue vertical mastehead left aligned segment">
+			<div class="ui hidden divider"></div>
+			<div class="ui container">
+				<h2 class="ui inverted header">Ava Hajratwala</h2>
+			</div>
+		</div>
+		<div class="ui inverted blue vertical masthead center aligned segment">
+			
+			<div class="ui container">
+				<div class="ui large secondary inverted pointing menu">
+					<a class="toc item">
+						<i class="sidebar icon"></i>
+					</a>
+					<a class="item" href="https://avahajr.github.io/">About Me</a>
+					<a class="active item">Projects</a>
+					<a class="item" href="https://avahajr.github.io/resume.html">Resume</a>
+					<div class="right item">
+						
+					</div>
+				</div>
+			</div>
+
+			<div class="ui text container">
+				<h1 class="ui inverted header">
+					Projects
+				</h1>
+				<p class="ui inverted">
+					Here you'll find my projects, both academic and personal.
+				</p>
+				<div class="ui hidden divider"></div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Project display grid -->
+	<div class="ui hidden divider"></div>
+	<div class="ui two column stackable container grid">
+		<div class="row">
+			<div class="column">
+				<a class="ui large container card " href="https://github.com/avahajr/avahajr.github.io">
+					<div class="content">
+						<div class="header">Personal Website</div>
+						<div class="meta">
+							<span class="category">May 22, 2023</span>
+						</div>
+						<div class="description">
+							<p>A GitHub Pages website to showcase my projects to potential employers and practice my frontend skills.</p>
+						</div>
+					</div>
+					<div class="extra content">
+						<div class="right floated author" >
+							<img class="ui avatar image" src="/images/github-pfp.jpg" alt="Ava's GitHub profile picture"> avahajr (GitHub)
+						</div>
+						<div class="ui padded stackable grid"> 
+							<div class="ui small tag purple label">WebDev</div>
+							<div class="ui small tag blue label">HTML/CSS</div>
+						</div>
+					</div>
+				</a>
+			</div>
+
+			<div class="column">
+				<a class="ui large container card" href="https://github.com/avahajr/avahajr.github.io">
+					<div class="content">
+						<div class="header">RL Stick-Shift Sim </div>
+						<div class="meta">
+							<span class="category">Summer 2023</span>
+						</div>
+						<div class="description">
+							<p>A 3D Unity game/simulation where the AI learns to drive a manual car from scratch using reinforcement learning.</p>
+						</div>
+					</div>
+					<div class="extra content">
+						<div class="right floated author" >
+							<img class="ui avatar image" src="/images/github-pfp.jpg" alt="Ava's GitHub profile picture"> avahajr (GitHub)
+						</div>
+						<div class="ui padded stackable grid"> 
+							<div class="ui small tag red label">AI</div>
+							<div class="ui small tag orange label">Game development</div>
+							<div class="ui small tag green label">C#</div>
+						</div>
+					</div>
+				</a>
+			</div>
+		</div>
+			
+		<div class="row">
+			<div class="column">
+				<a class="ui large container card" href="">
+					<div class="content">
+						<div class="header">Neural Network</div>
+						<div class="meta">
+							<span class="category">April 2023</span>
+						</div>
+						<div class="description">
+							<p>Building and training a neural network from scratch to identify handwritten digits from the famous MNIST dataset.</p>
+						</div>
+					</div>
+					<div class="extra content">
+						<div class="right floated author">
+							<img class="ui avatar image" src="/images/github-pfp.jpg" alt="Ava's GitHub profile picture"> avahajr (GitHub)
+						</div>
+						<div class="ui padded stackable grid"> 
+							<div class="ui small tag red label">AI</div>
+							<div class="ui small tag green label">Python</div>
+						</div>
+					</div>
+				</a>
+			</div>
+			<div class="column">
+				<a class="ui large container card" href="https://github.com/avahajr/avahajr.github.io">
+					<div class="content">
+						<div class="header">Dynamic web server and client</div>
+						<div class="meta">
+							<span class="category">December 2022</span>
+						</div>
+						<div class="description">
+							<p>A GitHub Pages website to showcase my projects to potential employers and practice my frontend skills.</p>
+						</div>
+					</div>
+					<div class="extra content">
+						<div class="right floated author" >
+							<img class="ui avatar image" src="/images/github-pfp.jpg" alt="Ava's GitHub profile picture"> avahajr (GitHub)
+						</div>
+					</div>
+				</a>
+			</div>
+		</div>
+	</div>
+	
+</body>
+
+</html>

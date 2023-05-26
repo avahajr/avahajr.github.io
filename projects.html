@@ -1,5 +1,18 @@
 <!DOCTYPE html>
 <html>
+<!-- possible handler modal for requesting access -->
+
+<!-- <script>
+	// provide a placeholder
+	$.modal('prompt',{
+		title: 'Enter your name',
+		placeholder: 'Do not enter your mothers name!',
+		handler: function(name){
+			$.toast({message: 'Your name is ' + (name || 'CANCELLED')});
+		}
+	});
+</script> -->
+
 
 <head>
 	<!-- Standard Meta -->
@@ -29,8 +42,18 @@
 	<link rel="stylesheet" type="text/css" href="semantic/dist/components/transition.css">
 	<link rel="stylesheet" type="text/css" href="semantic/dist/components/card.css">
 	<link rel="stylesheet" type="text/css" href="semantic/dist/components/label.css">
+	<link rel="stylesheet" type="text/css" href="semantic/dist/components/message.css">
+	<link rel="stylesheet" type="text/css" href="semantic/dist/components/modal.css">
+	<link rel="stylesheet" type="text/css" href="semantic/dist/components/dimmer.css">
+	<link rel="stylesheet" type="text/css" href="semantic/dist/components/input.css">
+	<link rel="stylesheet" type="text/css" href="semantic/dist/components/toast.css">
+
+
 
 	<style type="text/css">
+		.card:hover {
+      		cursor: pointer;
+    	}
 		.hidden.menu {
 			display: none;
 		}
@@ -126,14 +149,18 @@
 				margin-top: 0.5em;
 				font-size: 1.5em;
 			}
-
 		}
 	</style>
 
-	<script src="assets/library/jquery.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/jquery@3.6.3/dist/jquery.min.js"></script>
 	<script src="semantic/dist/components/visibility.js"></script>
 	<script src="semantic/dist/components/sidebar.js"></script>
 	<script src="semantic/dist/components/transition.js"></script>
+	<script src="semantic/dist/components/modal.js"></script>
+	<script src="semantic/dist/components/dimmer.js"></script>
+	<script src="semantic/dist/components/toast.js"></script>
+	
+
 	<script>
 		$(document)
     .ready(function() {
@@ -159,10 +186,55 @@
     })
   ;
 	</script>
+
+	<!-- <script>
+		function showPopup() {
+			$.modal( 'prompt', {
+			title: 'This repo is private',
+			content: 'Because this project was for a class, I don\'t have my professor\'s permission to publish my solution code publicly. However, you can enter your GitHub username and I will unlock the repo for you:',
+			placeholder: 'Enter your GitHub username here!',
+			handler: function(user){
+				if (user)
+				{
+					$.toast({message: 'Access granted to @' + user + ' on GitHub.'});
+				}
+		}
+	});
+		}
+	</script> -->
 </head>
 
 <body>
-
+	<div class="ui tiny modal">
+		<div class="header">This repo is private</div>
+		<div class="content">
+			<p>Because this project was for class, I don't have my professor's permission to post my solutions in a public repo. However, you can enter your GitHub username and I will unlock the repo for you:</p>
+		  <div class="ui container input">
+			<input type="text" id="username" placeholder="Enter your GitHub username...">
+		  </div>
+		</div>
+		<div class="actions">
+		  <div class="ui primary button" onclick="grantAccess()">Unlock repo</div>
+		  <div class="ui button" onclick="closeModal()">Nevermind</div>
+		</div>
+	  </div>
+	  <script>
+		function showPopup() {
+			$('.ui.modal').modal('show');
+		  };
+	  </script>
+	  <script>
+		function grantAccess() {
+			var user = document.getElementById("username").value;
+			closeModal();
+			if (user) {
+				$.toast({message: 'Access granted to @' + user + ' on GitHub.'});
+			}
+		}
+		function closeModal() {
+			$('.ui.modal').modal('hide');
+		}
+	  </script>
 	<!-- Following Menu -->
 	<!-- <div class="ui large top fixed hidden menu">
 		<div class="ui container">
@@ -211,6 +283,7 @@
 				<p class="ui inverted">
 					Here you'll find my projects, both academic and personal.
 				</p>
+
 				<!-- <div class="ui hidden divider"></div> -->
 
 				<button class="circular ui small basic inverted active button"> <b>All</b> </button>
@@ -222,20 +295,16 @@
 				<button class="circular ui small basic inverted button"> <b>Python</b> </button>
 
 				<div class="ui hidden divider"></div>
-
-
-
-				</select>
 			</div>
 		</div>
 	</div>
-
+	
 	<!-- Project display grid -->
 	<div class="ui hidden divider"></div>
 	<div class="ui two column stackable container grid">
 		<div class="row">
 			<div class="column">
-				<a class="ui large container card " href="https://github.com/avahajr/avahajr.github.io">
+				<a class="ui large container card" href="https://github.com/avahajr/avahajr.github.io">
 					<div class="content">
 						<div class="header">Personal Website</div>
 						<div class="meta">
@@ -258,7 +327,7 @@
 			</div>
 
 			<div class="column">
-				<a class="ui large container card" href="https://github.com/avahajr/avahajr.github.io">
+				<a class="ui large container card" href="https://github.com/avahajr/Racing-Game">
 					<div class="content">
 						<div class="header">RL Stick-Shift Sim </div>
 						<div class="meta">
@@ -281,10 +350,10 @@
 				</a>
 			</div>
 		</div>
-			
+		
 		<div class="row">
 			<div class="column">
-				<a class="ui large container card" href="">
+				<a id="modalOpener" class="ui large container link card" onclick="showPopup()">
 					<div class="content">
 						<div class="header">Neural Network</div>
 						<div class="meta">
@@ -306,7 +375,7 @@
 				</a>
 			</div>
 			<div class="column">
-				<a class="ui large container card" href="https://github.com/avahajr/">
+				<a class="ui large container card" onclick="showPopup()">
 					<div class="content">
 						<div class="header">Dynamic web server and client</div>
 						<div class="meta">
@@ -331,6 +400,7 @@
 		</div>
 	</div>
 	<div class="ui hidden divider"></div>
+	
 </body>
 <footer class="blue ui vertical footer segment">
     <div class="ui right aligned container">

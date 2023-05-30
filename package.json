@@ -1,6 +1,24 @@
 {
   "dependencies": {
+    "@octokit/core": "^4.2.1",
+    "@octokit/rest": "^19.0.11",
     "fomantic-ui": "^2.9.2",
-    "gulp": "^4.0.2"
-  }
+    "gulp": "^4.0.2",
+    "lru-cache": "^9.1.1",
+    "octokit": "^2.0.19",
+    "webpack": "^5.84.1"
+  },
+  "name": "avahajr.github.io",
+  "description": "Check out the website at <a href=\"https://avahajr.github.io\">this link</a>.",
+  "version": "1.0.0",
+  "main": "myRequest.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/avahajr/avahajr.github.io"
+  },
+  "author": "Ava Hajratwala",
+  "license": "ISC"
 }

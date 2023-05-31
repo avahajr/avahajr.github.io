@@ -3,6 +3,8 @@
 <html>
 
 	<head>
+		<script src="https://cdn.jsdelivr.net/npm/jquery@3.6.3/dist/jquery.min.js"></script>
+
 		<!-- Standard Meta -->
 		<meta charset="utf-8" />
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
@@ -107,24 +109,25 @@
 			}
 		</style>
 
-		<script src="https://cdn.jsdelivr.net/npm/jquery@3.6.3/dist/jquery.min.js"></script>
 		<script src="semantic/dist/components/visibility.js"></script>
 		<script src="semantic/dist/components/sidebar.js"></script>
 		<script src="semantic/dist/components/transition.js"></script>
 		<script src="semantic/dist/components/modal.js"></script>
+		<script src="semantic/dist/components/toast.js"></script>
 		<script src="semantic/dist/components/dimmer.js"></script>
 
 		<!-- Importing functions that I wrote -->
-		<script src="semantic/dist/components/toast.js"></script>
-		<script type="module" src='./myRequest.js'>
-			import * as myRequests from "./myRequests.js";
-		</script>
-	
+		<script type='module' src='./myModule.js'></script>
+
+		<!-- <script type="module">
+			import { showPopup, grantAccessToRepo, closeModal } from "./myModule.js";
+			showPopup();
+		</script> -->
 		
 	</head>
 
 	<body>
-		<script type="module" src='./myRequest.js'></script>
+		<!-- <script type="module" src='./myRequest.js'></script> -->
 		<div class="ui tiny modal">
 			<div class="header">This repo is private</div>
 			<div class="content">
@@ -134,8 +137,8 @@
 			</div>
 			</div>
 			<div class="actions">
-			<div class="ui primary button" onclick="myRequests.grantAccessToRepo('dynamic-http-server'); myRequests.grantAccessToRepo('sp23-hw6')">Unlock repo</div>
-			<div class="ui button" onclick="myRequests.closeModal()">Nevermind</div>
+			<div class="ui primary button" onclick="grantAccessToRepo('dynamic-http-server'); grantAccessToRepo('sp23-hw6')">Unlock repo</div>
+			<div class="ui button" onclick="closeModal()">Nevermind</div>
 			</div>
 		</div>
 		
@@ -247,7 +250,7 @@
 			
 			<div class="row">
 				<div class="column">
-					<a id="modalOpener" class="ui large container link card" onclick="myRequests.showPopup()">
+					<a id="modalOpener" class="ui large container link card" onclick="showPopup()">
 						<div class="content">
 							<div class="header">Neural Network</div>
 							<div class="meta">
@@ -269,7 +272,7 @@
 					</a>
 				</div>
 				<div class="column">
-					<a class="ui large container card" onclick="myRequests.showPopup()">
+					<a class="ui large container card" onclick="showPopup()">
 						<div class="content">
 							<div class="header">Dynamic web server and client</div>
 							<div class="meta">

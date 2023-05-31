@@ -1,10 +1,10 @@
-import { Octokit } from "https://esm.sh/octokit";
+import { Octokit } from "https://esm.sh/octokit@2.0.19";
 
-function showPopup() {
+export function showPopup() {
     $('.ui.modal').modal('show');
 };
 
-function grantAccessToRepo(repo) {
+export function grantAccessToRepo(repo) {
     var username = document.getElementById("username").value;
     const octokit = new Octokit({
         auth: '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'
@@ -22,8 +22,10 @@ function grantAccessToRepo(repo) {
     closeModal();		
 }
 // Close the open modal.
-function closeModal() {
+export function closeModal() {
     $('.ui.modal').modal('hide');
 }
 
-export { showPopup, closeModal, grantAccessToRepo };
+window.showPopup=showPopup;
+window.closeModal=closeModal;
+window.grantAccessToRepo=grantAccessToRepo;

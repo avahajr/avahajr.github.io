@@ -13,6 +13,7 @@
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.3/dist/jquery.min.js"></script>
     <link rel="stylesheet" type="text/css" href="semantic/dist/semantic.min.css">
     <script src="semantic/dist/semantic.min.js"></script>
+    <script src="semantic/dist/components/dropdown.js"></script>
     
 </head>
 
@@ -21,10 +22,26 @@
     
     <div class="ui container">
         <h1>Ava Hajratwala</h1>
-        <div class="ui top sticky secondary pointing menu">
+        <div class="ui top secondary pointing menu">
             <a class="active item">About Me</a>
             <a href="https://avahajr.github.io/projects.html" class="item">Projects</a>
-            <a href="./05-24-2023_Resume.pdf" target="_blank" class="item">Resume</a>
+
+            <script> 
+                $(document).ready(function(){
+                     $('.ui.dropdown') .dropdown();
+               });
+            </script>
+
+            <div class="ui dropdown link item">
+                <span class="text">Academics</span>
+                <i class="dropdown icon"></i>
+                <div class="menu">
+                    <a href='./05-24-2023_Resume.pdf' class="item">Resume</a>
+                    <a href='./classes.html' class="item">Classes</a>
+                    <!-- <a href="./05-24-2023_Resume.pdf" target="_blank" class="item">Resume</a>
+                    <a href="./05-24-2023_Resume.pdf" target="_blank" class="item">Class list</a> -->
+                </div>  
+            </div>
         </div> 
     </div>
 </header>
@@ -102,7 +119,7 @@
                 </div>
                 <div class="column">
                     <h3>Current Projects</h3>
-                    <a class="ui card" href="https://github.com/avahajr/avahajr.github.io">
+                    <a class="ui container card" href="https://github.com/avahajr/avahajr.github.io">
                         <div class="content">
                         <div class="header">Personal Website</div>
                         <div class="meta">
@@ -113,9 +130,25 @@
                         </div>
                         </div>
                         <div class="extra content">
-                        <div class="right floated author" >
-                            <img class="ui avatar image" src="/images/github-pfp.jpg" alt="Ava's GitHub profile picture"> avahajr (GitHub)
+                            <div class="right floated author" >
+                                <img class="ui avatar image" src="/images/github-pfp.jpg" alt="Ava's GitHub profile picture"> avahajr (GitHub)
+                            </div>
                         </div>
+                    </a>
+                    <a class="ui container card" href="https://github.com/avahajr/Racing-Game" target='_blank'>
+						<div class="content">
+							<div class="header">RL Stick-Shift Sim </div>
+							<div class="meta">
+								<span class="category">Summer 2023</span>
+							</div>
+							<div class="description">
+								<p>A 3D Unity game/simulation where the AI learns to drive a manual car from scratch using reinforcement learning.</p>
+							</div>
+						</div>
+						<div class="extra content">
+							<div class="right floated author" >
+								<img class="ui avatar image" src="/images/github-pfp.jpg" alt="Ava's GitHub profile picture"> avahajr (GitHub)
+							</div>
                         </div>
                     </a>
                     <button class="ui primary tertiary button"> <a href="https://avahajr.github.io/projects.html">See more projects</a></button>

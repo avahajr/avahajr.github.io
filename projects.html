@@ -117,7 +117,12 @@
 		<script src="semantic/dist/components/dropdown.js"></script>
 
 		<!-- Importing functions that I wrote -->
-		<script type='module' src='./myModule.js'></script>
+		<script type='module' src='./js/myModule.js'></script>
+
+		<script type="module">
+			import * as ReactGithubLogin from "/node_modules/react-github-login/dist/GitHubLogin.js";
+			const { GitHubLoginButton } = ReactGithubLogin;
+		</script>
 
 		<!-- <script type="module">
 			import { showPopup, grantAccessToRepo, closeModal } from "./myModule.js";
@@ -131,20 +136,31 @@
 		<div class="ui tiny modal">
 			<div class="header">This repo is private</div>
 			<div class="content">
-				<p>Because this project was for class, I don't have my professor's permission to post my solutions in a public repo. However, you can enter your GitHub username and I will unlock the repo for you:</p>
-			<div class="ui container input">
-				<input type="text" id="username" placeholder="Enter your GitHub username...">
+				<p>Due to honor code restrictions, I cannot post this repo online publically. Click the button below to be invited to the private repo.</p>
 			</div>
-			</div>
-			<div class="actions">
-			<div class="ui primary button" onclick="grantAccessToRepo('dynamic-http-server'); grantAccessToRepo('sp23-hw6')">Unlock repo</div>
+			<div class="center aligned actions">
+				<GitHubLoginButton
+
+					clientId= 'fb0239b54e9fbea2ad83'
+					redirectUri=''
+					onSuccess={grantAccessToRepo}
+					onFailure={onFailure}
+					buttonText="Unlock Repo"
+
+					scope="read:user"
+					className="ui primary button"
+				>
+        
+
+        		</GitHubLoginButton>
+
 			<div class="ui button" onclick="closeModal();">Nevermind</div>
 			</div>
 		</div>
 		
 		<!-- Page Contents -->
 		<div class="pusher">
-			<div class="ui inverted blue vertical mastehead left aligned segment">
+			<div class="ui inverted blue vertical masthead left aligned segment">
 				<div class="ui hidden divider"></div>
 				<div class="ui container">
 					<h2 class="ui inverted header">Ava Hajratwala</h2>
@@ -154,7 +170,7 @@
 				
 				<div class="ui container">
 					<div class="ui top inverted secondary pointing menu">
-						<a href='https://avahajr.github.io/projects.html' class="item">About Me</a>
+						<a href='https://avahajr.github.io/index.html' class="item">About Me</a>
 						<a href="" class="active item">Projects</a>
 			
 						<script> 
@@ -167,8 +183,8 @@
 							<span class="text">Academics</span>
 							<i class="dropdown icon"></i>
 							<div class="menu">
-								<a href='./05-24-2023_Resume.pdf' class="item">Resume</a>
-								<a href='./classes.html' class="item">Classes</a>
+								<a href='./05-24-2023_Resume.pdf' class="item" target="_blank">Resume</a>
+								<a href='./classes.html' class="item" target="_blank">Classes taken</a>
 							</div>  
 						</div>
 					</div> 

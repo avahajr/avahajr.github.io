@@ -2,10 +2,12 @@
   "dependencies": {
     "@octokit/core": "^4.2.1",
     "@octokit/rest": "^19.0.11",
+    "animate.css": "^4.1.1",
     "fomantic-ui": "^2.9.2",
     "gulp": "^4.0.2",
     "lru-cache": "^9.1.1",
     "octokit": "^2.0.19",
+    "react-github-login": "^1.0.3",
     "webpack": "^5.84.1"
   },
   "name": "avahajr.github.io",

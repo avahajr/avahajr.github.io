@@ -16,7 +16,7 @@ function MobileContent() {
       {/* <Image centered size="small" circular src="pfp.png" /> */}
       <Container>
         <h1>About me</h1>
-        <Divider></Divider>
+        {/* <Divider></Divider> */}
 
         <ReactMarkdown>{markdown}</ReactMarkdown>
       </Container>

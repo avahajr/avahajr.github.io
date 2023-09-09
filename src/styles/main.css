@@ -1,0 +1,78 @@
+@font-face {
+  font-family: "Pixeboy";
+  src: url("/fonts/Pixeboy-z8XGD.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Roboto mono";
+  src: url("/fonts/RobotoMono-Regular.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Menlo";
+  src: url("/fonts/MesloLGL-Regular.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Newsreader";
+  src: url("/fonts/Newsreader-VariableFont_opsz,wght.ttf")
+    format("truetype-variations");
+}
+@font-face {
+  font-family: "Newsreader italic";
+  src: url("/fonts/Newsreader-Italic-VariableFont_opsz,wght.ttf")
+    format("truetype-variations");
+}
+.item {
+  font-family: "Menlo" !important;
+  font-size: 12pt;
+}
+.active.item {
+  font-weight: 600 !important;
+}
+
+* {
+  font-family: "Menlo";
+}
+p {
+  font-family: "Newsreader";
+  font-size: 1.3em;
+  line-height: 33px !important;
+}
+a {
+  font-family: "Newsreader";
+  font-size: 1em;
+  line-height: 33px;
+}
+
+.logo {
+  font-family: "Pixeboy";
+  font-size: 2.5em;
+  /* height: 30px; */
+  display: inline-block;
+  /* padding-bottom: 10px; */
+}
+
+h1 {
+  font-family: "Pixeboy" !important;
+  font-size: 35px !important;
+}
+
+.ui.grid .column .menu {
+  margin-top: 18px;
+}
+
+.center-logo {
+  display: flex !important;
+  align-items: center;
+}
+
+.span {
+  font-family: "Menlo" !important;
+}
+
+.main-menu {
+  box-shadow: 0 4px 3px -1.5px rgb(202, 202, 202) !important;
+}
+.ui.icon {
+  padding: 100px;
+}

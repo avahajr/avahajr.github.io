@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from "react";
-import { Grid, Image, Divider, Icon, Container } from "semantic-ui-react";
+import { Divider, Container } from "semantic-ui-react";
 import { ReactMarkdown } from "react-markdown/lib/react-markdown";
 import "fomantic-ui-css/semantic.min.css";
-import CaptionedEmoji from "./CaptionedEmoji";
 
 function MobileContent() {
   const [markdown, setMarkdown] = useState("");

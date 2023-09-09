@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.beebe458.css",
-    "main.js": "/static/js/main.eaccf973.js",
+    "main.js": "/static/js/main.e39b388e.js",
     "static/media/MesloLGL-Regular.ttf": "/static/media/MesloLGL-Regular.f4a27c9d6702c9091c9f.ttf",
     "static/media/brand-icons.svg": "/static/media/brand-icons.6729d29753e000c17489.svg",
     "static/media/Newsreader-Italic-VariableFont_opsz,wght.ttf": "/static/media/Newsreader-Italic-VariableFont_opsz,wght.ac2d70776da2eb432217.ttf",
@@ -41,10 +41,10 @@
     "static/media/outline-icons.woff2": "/static/media/outline-icons.687a4990ea22bb1a49d4.woff2",
     "index.html": "/index.html",
     "main.beebe458.css.map": "/static/css/main.beebe458.css.map",
-    "main.eaccf973.js.map": "/static/js/main.eaccf973.js.map"
+    "main.e39b388e.js.map": "/static/js/main.e39b388e.js.map"
   },
   "entrypoints": [
     "static/css/main.beebe458.css",
-    "static/js/main.eaccf973.js"
+    "static/js/main.e39b388e.js"
   ]
 }

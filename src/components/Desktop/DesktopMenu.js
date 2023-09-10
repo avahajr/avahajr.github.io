@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { Menu, Container } from "semantic-ui-react";
 
 function DesktopMenu() {
@@ -20,14 +21,14 @@ function DesktopMenu() {
           <h1 className="logo"> Ava Hajratwala </h1>
         </Menu.Item>
 
-        <Menu.Item as="a" href="./" active position="right">
+        <Menu.Item as={Link} to={"/"} active position="right">
           About
         </Menu.Item>
 
-        <Menu.Item as="a" href="./project-hub">
+        <Menu.Item as={Link} to="/projects">
           Projects
         </Menu.Item>
-        <Menu.Item as="a" href="./academics">
+        <Menu.Item as={Link} to="/academics">
           Academics
         </Menu.Item>
       </Container>

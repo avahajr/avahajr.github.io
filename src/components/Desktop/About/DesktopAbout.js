@@ -4,7 +4,7 @@ import { ReactMarkdown } from "react-markdown/lib/react-markdown";
 import "fomantic-ui-css/semantic.min.css";
 import CaptionedEmoji from "./CaptionedEmoji";
 
-const DesktopContent = () => {
+const DesktopAbout = () => {
   const [markdown, setMarkdown] = useState("");
 
   useEffect(() => {
@@ -47,4 +47,4 @@ const DesktopContent = () => {
   );
 };
 
-export default DesktopContent;
+export default DesktopAbout;

@@ -1,36 +1,53 @@
-import { createMedia } from "@artsy/fresnel";
-import DesktopMenu from "./components/About/DesktopMenu";
-import MobileMenu from "./components/About/MobileMenu";
-import DesktopContent from "./components/About/DesktopContent";
-import MobileHeading from "./components/About/MobileHeading";
-import MobileContent from "./components/About/MobileContent";
+// import { createMedia } from "@artsy/fresnel";
+import { Route, Routes } from "react-router-dom";
+import { useState, useEffect } from "react";
+import DesktopMenu from "./components/Desktop/DesktopMenu";
+import MobileMenu from "./components/Mobile/MobileMenu";
+
+import DesktopAbout from "./components/Desktop/About/DesktopAbout";
+import MobileAbout from "./components/Mobile/About/MobileAbout";
+
+import MobileProjects from "./components/Mobile/Projects/MobileProjects";
+import MobileAcademics from "./components/Mobile/Academics/MobileAcademics";
+import DesktopAcademics from "./components/Desktop/Academics/DesktopAcademics";
+import DesktopProjects from "./components/Desktop/Projects/DesktopProjects";
+import MobileHeading from "./components/Mobile/MobileHeading";
 
 function App() {
-  const { MediaContextProvider, Media } = createMedia({
-    // breakpoints values can be either strings or integers
-    breakpoints: {
-      xs: 0,
-      sm: 768,
-      md: 768,
-      lg: 1024,
-      xl: 1192,
-    },
-  });
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 768); // Adjust the breakpoint as needed
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 768); // Adjust the breakpoint as needed
+    };
+
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
 
   return (
-    <MediaContextProvider>
-      <Media at="xs">
-        {/* Mobile app */}
-        <MobileHeading />
-        <MobileContent />
-        <MobileMenu style={{ marginTop: "95px" }} />
-      </Media>
-      <Media greaterThan="xs">
-        {/* Desktop app, which is already built */}
-        <DesktopMenu />
-        <DesktopContent />
-      </Media>
-    </MediaContextProvider>
+    <>
+      {isMobile ? <MobileHeading /> : <DesktopMenu />}
+      <Routes>
+        <Route
+          path="/"
+          element={isMobile ? <MobileAbout /> : <DesktopAbout />}
+        />
+        <Route
+          path="/academics"
+          element={isMobile ? <MobileAcademics /> : <DesktopAcademics />}
+        />
+        <Route
+          path="/projects"
+          element={isMobile ? <MobileProjects /> : <DesktopProjects />}
+        />
+      </Routes>
+
+      {isMobile ? <MobileMenu style={{ marginTop: "95px" }} /> : <></>}
+    </>
   );
 }
 

@@ -1,8 +1,12 @@
-import React from "react";
+import { React, useState } from "react";
 import { Link } from "react-router-dom";
 import { Menu, Container } from "semantic-ui-react";
 
 function DesktopMenu() {
+  const [activeItem, setActiveItem] = useState("about");
+  const handleClick = (item) => {
+    setActiveItem(item);
+  };
   return (
     <Menu secondary className="main-menu">
       <Container>
@@ -21,14 +25,30 @@ function DesktopMenu() {
           <h1 className="logo"> Ava Hajratwala </h1>
         </Menu.Item>
 
-        <Menu.Item as={Link} to={"/"} active position="right">
+        <Menu.Item
+          as={Link}
+          to={"/"}
+          active={activeItem === "about"}
+          position="right"
+          onClick={() => handleClick("about")}
+        >
           About
         </Menu.Item>
 
-        <Menu.Item as={Link} to="/projects">
+        <Menu.Item
+          as={Link}
+          to="/projects"
+          active={activeItem === "projects"}
+          onClick={() => handleClick("projects")}
+        >
           Projects
         </Menu.Item>
-        <Menu.Item as={Link} to="/academics">
+        <Menu.Item
+          as={Link}
+          to="/academics"
+          active={activeItem === "academics"}
+          onClick={() => handleClick("academics")}
+        >
           Academics
         </Menu.Item>
       </Container>

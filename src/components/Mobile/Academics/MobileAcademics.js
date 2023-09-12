@@ -1,7 +1,7 @@
 import React from "react";
 
 function MobileAcademics() {
-  return <div>Academics</div>;
+  return <div>MobileAcademics</div>;
 }
 
 export default MobileAcademics;

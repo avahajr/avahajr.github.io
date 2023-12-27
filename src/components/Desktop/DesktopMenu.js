@@ -4,9 +4,11 @@ import { Menu, Container } from "semantic-ui-react";
 
 function DesktopMenu() {
   const [activeItem, setActiveItem] = useState("about");
+
   const handleClick = (item) => {
     setActiveItem(item);
   };
+
   return (
     <Menu secondary className="main-menu">
       <Container>

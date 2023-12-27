@@ -13,8 +13,10 @@
     "fomantic-ui-css": "^2.9.2",
     "localforage": "^1.10.0",
     "match-sorter": "^6.3.1",
+    "octokit": "^3.1.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-fast-marquee": "^1.6.2",
     "react-markdown": "^8.0.7",
     "react-native-marquee": "^0.5.0",
     "react-router-dom": "^6.15.0",
@@ -51,7 +53,7 @@
     ]
   },
   "devDependencies": {
-    "gh-pages": "^6.0.0",
-    "@babel/plugin-proposal-private-property-in-object": "7.21.11"
+    "@babel/plugin-proposal-private-property-in-object": "7.21.11",
+    "gh-pages": "^6.0.0"
   }
 }

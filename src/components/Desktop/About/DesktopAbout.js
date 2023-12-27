@@ -6,24 +6,46 @@ import CaptionedEmoji from "./CaptionedEmoji";
 import Marquee from "react-fast-marquee";
 import { Octokit } from "octokit";
 
-const octokit = new Octokit({
-  auth: "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",
-});
+function cleanAndFormatString(input) {
+  // Split the string into words based on hyphens
+  const words = input.split("-");
 
-const repos = await octokit.request("GET /users/avahajr/repos", {
-  username: "avahajr",
-  headers: {
-    "X-GitHub-Api-Version": "2022-11-28",
-    accept: "application/vnd.github+json,",
-  },
-  sort: "pushed",
+  // Capitalize the first letter of each word
+  const formattedWords = words.map(
+    (word) => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase()
+  );
+
+  // Join the words into a single string
+  return formattedWords.join(" ");
+}
+
+const octokit = new Octokit({
+  auth: "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",
 });
-console.log(repos);
 
 const DesktopAbout = () => {
   const [markdown, setMarkdown] = useState("");
+  const [repos, setRepos] = useState([]);
 
   useEffect(() => {
+    const fetchRepos = async () => {
+      try {
+        const response = await octokit.request("GET /users/avahajr/repos", {
+          username: "avahajr",
+          headers: {
+            "X-GitHub-Api-Version": "2022-11-28",
+            accept: "application/vnd.github+json",
+          },
+          sort: "pushed",
+        });
+        setRepos(response.data);
+      } catch (error) {
+        console.error("Error fetching repos:", error);
+      }
+    };
+
+    fetchRepos();
+
     fetch("/md/bio.md")
       .then((response) => response.text())
       .then((text) => setMarkdown(text));
@@ -78,10 +100,10 @@ const DesktopAbout = () => {
       <Container></Container>
       <Divider hidden />
       <Marquee pauseOnHover={true}>
-        {repos.data.map((repo) => {
+        {repos.map((repo) => {
           return (
             <Card key={repo.id}>
-              <Card.Header>{repo.name}</Card.Header>
+              <Card.Header>{cleanAndFormatString(repo.name)}</Card.Header>
               <Card.Content>{repo.description}</Card.Content>
             </Card>
           );

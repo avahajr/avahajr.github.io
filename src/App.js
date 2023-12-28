@@ -1,25 +1,48 @@
 // import { createMedia } from "@artsy/fresnel";
-import { Route, Routes } from "react-router-dom";
+// import { Route, Routes } from "react-router-dom";
 import { useState, useEffect } from "react";
 import DesktopMenu from "./components/Desktop/DesktopMenu";
 import MobileMenu from "./components/Mobile/MobileMenu";
 
-import DesktopAbout from "./components/Desktop/About/DesktopAbout";
-import MobileAbout from "./components/Mobile/About/MobileAbout";
-
-import MobileProjects from "./components/Mobile/Projects/MobileProjects";
-import MobileAcademics from "./components/Mobile/Academics/MobileAcademics";
-import DesktopAcademics from "./components/Desktop/Academics/DesktopAcademics";
-import DesktopProjects from "./components/Desktop/Projects/DesktopProjects";
 import MobileHeading from "./components/Mobile/MobileHeading";
+
+import Desktop from "./components/Desktop/Desktop";
+import { Octokit } from "octokit";
+import Mobile from "./components/Mobile/Mobile";
 
 function App() {
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 768); // Adjust the breakpoint as needed
+  const [markdown, setMarkdown] = useState("");
+  const [repos, setRepos] = useState([]);
 
   useEffect(() => {
     const handleResize = () => {
       setIsMobile(window.innerWidth <= 768); // Adjust the breakpoint as needed
     };
+    const octokit = new Octokit({
+      auth: process.env.REACT_APP_WEB_AUTH,
+    });
+    const fetchRepos = async () => {
+      try {
+        const response = await octokit.request("GET /users/avahajr/repos", {
+          username: "avahajr",
+          headers: {
+            "X-GitHub-Api-Version": "2022-11-28",
+            accept: "application/vnd.github+json",
+          },
+          sort: "pushed",
+        });
+        setRepos(response.data);
+      } catch (error) {
+        console.error("Error fetching repos:", error);
+      }
+    };
+
+    fetchRepos();
+
+    fetch("/md/bio.md")
+      .then((response) => response.text())
+      .then((text) => setMarkdown(text));
 
     window.addEventListener("resize", handleResize);
 
@@ -28,23 +51,16 @@ function App() {
     };
   }, []);
 
+  // console.log(repos);
   return (
     <>
       {isMobile ? <MobileHeading /> : <DesktopMenu />}
-      <Routes>
-        <Route
-          path="/"
-          element={isMobile ? <MobileAbout /> : <DesktopAbout />}
-        />
-        <Route
-          path="/academics"
-          element={isMobile ? <MobileAcademics /> : <DesktopAcademics />}
-        />
-        <Route
-          path="/projects"
-          element={isMobile ? <MobileProjects /> : <DesktopProjects />}
-        />
-      </Routes>
+
+      {isMobile ? (
+        <Mobile bio={markdown} repos={repos} />
+      ) : (
+        <Desktop bio={markdown} repos={repos} />
+      )}
 
       {isMobile ? <MobileMenu style={{ marginTop: "95px" }} /> : <></>}
     </>

@@ -1,6 +1,15 @@
 import React from "react";
-import { Grid, Image, Divider, Icon, Container, Card } from "semantic-ui-react";
+import {
+  Grid,
+  Image,
+  Divider,
+  Icon,
+  Container,
+  Card,
+  Label,
+} from "semantic-ui-react";
 import { ReactMarkdown } from "react-markdown/lib/react-markdown";
+import { Link } from "react-router-dom";
 // import "fomantic-ui-css/semantic.min.css";
 import CaptionedEmoji from "./CaptionedEmoji";
 import Marquee from "react-fast-marquee";
@@ -37,6 +46,7 @@ const Desktop = ({ bio, repos }) => {
             <Container textAlign="center">
               <Divider hidden />
               <a
+                className="social"
                 href="https://www.linkedin.com/in/ava-hajratwala-42910b274"
                 target="_blank"
                 rel="noreferrer"
@@ -44,6 +54,7 @@ const Desktop = ({ bio, repos }) => {
                 <Icon link color="blue" name="linkedin" size="big" />
               </a>
               <a
+                className="social"
                 href="https://github.com/avahajr"
                 target="_blank"
                 rel="noreferrer"
@@ -51,6 +62,7 @@ const Desktop = ({ bio, repos }) => {
                 <Icon link color="blue" name="github" size="big" />
               </a>
               <a
+                className="social"
                 href="https://instagram.com/avahajratwala"
                 target="_blank"
                 rel="noreferrer"
@@ -73,20 +85,36 @@ const Desktop = ({ bio, repos }) => {
           <h1>Projects</h1>
           <Divider />
         </Container>
-        {/* {console.log(repos.length)} */}
         {repos.length ? (
           <Marquee pauseOnHover={true}>
             {repos.map((repo) => {
               return (
-                <Card className="scrollcard" key={repo.id}>
-                  <Card.Header>
-                    <h3>{cleanAndFormatString(repo.name)}</h3>
-                  </Card.Header>
-                  <Card.Content>{repo.description}</Card.Content>
-                  <Card.Content extra>
-                    {repo.language ? repo.language : ""}
-                  </Card.Content>
-                </Card>
+                <Link to={repo.homepage ? repo.homepage : repo.html_url}>
+                  <Card
+                    color="blue"
+                    link
+                    // href={repo.homepage ? repo.homepage : repo.html_url}
+                    // target="_blank"
+                    className="scrollcard"
+                    key={repo.id}
+                  >
+                    {repo.private ? (
+                      <Label corner>
+                        <Icon name="lock"></Icon>
+                      </Label>
+                    ) : (
+                      <></>
+                    )}
+
+                    <Card.Header>
+                      <h3>{cleanAndFormatString(repo.name)}</h3>
+                    </Card.Header>
+                    <Card.Content>{repo.description}</Card.Content>
+                    <Card.Content extra>
+                      {repo.language ? repo.language : ""}
+                    </Card.Content>
+                  </Card>
+                </Link>
               );
             })}
           </Marquee>

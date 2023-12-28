@@ -25,7 +25,9 @@ function App() {
     const fetchRepos = async () => {
       try {
         const response = await octokit.request("GET /users/avahajr/repos", {
+          // visibility: "all",
           username: "avahajr",
+          affiliation: "owner",
           headers: {
             "X-GitHub-Api-Version": "2022-11-28",
             accept: "application/vnd.github+json",

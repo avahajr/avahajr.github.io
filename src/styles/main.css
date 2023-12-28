@@ -22,6 +22,9 @@
   src: url("/fonts/Newsreader-Italic-VariableFont_opsz,wght.ttf")
     format("truetype-variations");
 }
+* {
+  font-family: "Newsreader";
+}
 .item {
   font-family: "Menlo" !important;
   font-size: 12pt;
@@ -30,7 +33,7 @@
   font-weight: 600 !important;
 }
 
-* {
+.caption {
   font-family: "Menlo";
 }
 p {
@@ -80,4 +83,29 @@ h2 {
 }
 .ui.icon {
   padding: 100px;
+}
+
+#about,
+#projects,
+#academics {
+  min-height: fit-content;
+  margin-bottom: 10px;
+  height: 100vh !important;
+}
+
+.scrollcard {
+  margin: 20px !important;
+  padding: 30px;
+  height: 200px !important;
+}
+
+.scrollcard h3 {
+  font-family: "Menlo";
+  margin: 5px;
+  padding: 10px;
+}
+
+.scrollcard .extra.content,
+.ui.horizontal.divider {
+  font-family: "Menlo";
 }

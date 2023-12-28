@@ -9,11 +9,12 @@ function CaptionedEmoji({ emoji, caption }) {
         className="small"
       />
       <span
+        className="caption"
         style={{
           whiteSpace: "nowrap",
           overflow: "hidden",
           fontSize: "clamp(12px, .9vw, 1em)",
-          marginLeft: "clamp(-100px, 1vw, 20px)",
+          marginLeft: "clamp(-100px, 2vw, 20px)",
         }}
       >
         {caption}

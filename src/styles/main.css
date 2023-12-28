@@ -41,7 +41,7 @@ p {
   font-size: 1.3em;
   line-height: 33px !important;
 }
-a {
+a.social {
   font-family: "Newsreader";
   font-size: 1em;
   line-height: 33px;
@@ -94,6 +94,7 @@ h2 {
 }
 
 .scrollcard {
+  color: black !important;
   margin: 20px !important;
   padding: 30px;
   height: 200px !important;

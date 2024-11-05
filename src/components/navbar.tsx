@@ -12,12 +12,14 @@ export default function Navbar() {
     window.location.href = nav.href;
   };
   return (
-    <Card className="p-5 m-5">
+    <Card className="sticky top-5 p-5 m-5 mx-auto max-w-4xl">
       <CardHeader className="justify-between">
         <div className="flex gap-5">
           <Avatar radius="full" size="lg" src="ava.png" />
           <div className="flex flex-col gap-1 items-start justify-center">
-            <h3 className="text-lg font-semibold leading-none">Ava Hajratwala</h3>
+            <h3 className="text-lg font-semibold leading-none">
+              Ava Hajratwala
+            </h3>
             <div className="text-sm">
               Software Engineer
               <span className="text-default-400"> @ WBAR Radio</span>

@@ -2,7 +2,7 @@ import {
   Navbar,
   NavbarBrand,
   NavbarContent,
-  NavbarItem
+  NavbarItem,
 } from "@nextui-org/navbar";
 import { Button } from "@nextui-org/button";
 import { Avatar } from "@nextui-org/avatar";
@@ -13,18 +13,19 @@ import { siteConfig } from "@/config/site";
 
 export default function NavbarComponent() {
   const [currentActiveSection, setCurrentSection] = useState(
-    siteConfig.navItems[0]
+    siteConfig.navItems[0],
   );
 
   const handleSectionChange = (nav: { href: string; label: string }) => {
     setCurrentSection(nav);
-    window.location.href = nav.href;
   };
+
   const menuItems = siteConfig.navItems.map((nav) => (
     <NavbarItem key={nav.label}>
       <Button
         key={nav.label}
         as={Link}
+        href={nav.href}
         color={"secondary"}
         variant={nav.label === currentActiveSection.label ? "shadow" : "flat"}
         onClick={() => handleSectionChange(nav)}
@@ -35,11 +36,8 @@ export default function NavbarComponent() {
   ));
 
   return (
-    <Navbar
-      isBordered
-      className="mx-auto pt-14 pb-14 sm:pt-8 sm:pb-8"
-    >
-      <div className="flex mx-auto" id="me">
+    <Navbar isBordered className="mx-auto pt-14 pb-14 sm:pt-8 sm:pb-8">
+      <div className="flex mx-auto">
         <div className="block">
           <NavbarBrand className="gap-5 flex mx-auto">
             <Avatar

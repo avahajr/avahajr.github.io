@@ -8,11 +8,11 @@ interface ProjectsProps {
 
 export default function Portfolio({ projects }: ProjectsProps) {
   return (
-    <div className="pt-40" id="portfolio">
-      <h2 className="text-4xl font-semibold  mb-8">Portfolio</h2>
+    <section className="min-h-screen pt-10" id="portfolio">
+      <h2 className="text-5xl font-semibold  mb-8">Portfolio</h2>
       {projects.map((project, index) => {
         return <Project key={index} project={project} />;
       })}
-    </div>
+    </section>
   );
 }

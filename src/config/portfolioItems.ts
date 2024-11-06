@@ -1,43 +1,49 @@
 interface PortfolioItem {
   title: string;
   description: string;
-  demoVideoEmbed: string;
-  repoLink: string;
+  demoVideoUrl?: string;
+  liveUrl?: string;
+  actionPhrase: string;
+  repoUrl: string;
   image?: string;
   tags: string[];
 }
 
 const portfolioItems: PortfolioItem[] = [
   {
-    title: "Flight Simulator",
-    description: "A flight simulator built with Unity and C#.",
-    demoVideoEmbed: "",
-    repoLink: "",
-    image: "flight-simulator.png",
-    tags: ["Unity", "C#", "Arduino"],
-  },
-  {
     title: "wbar.org",
     description: "The official website for WBAR Radio.",
-    demoVideoEmbed: "",
-    repoLink: "",
-    image: "wbar-org.png",
+    liveUrl: "https://wbar.org",
+    repoUrl: "https://github.com/wbar-radio/wbar-app",
+    image: "wbar.png",
+    actionPhrase: "Listen",
     tags: ["React", "Express.js", "SQL"],
+  },
+  {
+    title: "Flight Simulator",
+    description: "A flight simulator built with Unity and C#.",
+    demoVideoUrl: "",
+    repoUrl: "",
+    actionPhrase: "Watch the demo",
+    image: "flight-simulator.png",
+    tags: ["Unity", "C#", "Arduino"],
   },
   {
     title: "Privacy Helper",
     description:
       "A GPT-powered tool for helping users understand the policies they sign.",
-    demoVideoEmbed: "",
-    repoLink: "",
+    demoVideoUrl: "",
+    repoUrl: "",
+    actionPhrase: "Watch the Demo",
     image: "privacy-helper.png",
     tags: ["React", "Flask", "OpenAI API", "Bootstrap CSS"],
   },
   {
     title: "WebAudio DJ",
     description: "DJ Kit built with the WebAudio API and React.",
-    demoVideoEmbed: "",
-    repoLink: "",
+    liveUrl: "https://avahajr.github.io/dj-kit/",
+    repoUrl: "https://github.com/avahajr/dj-kit",
+    actionPhrase: "Try it out",
     image: "dj-kit.png",
     tags: ["React", "Next.js", "Tailwind CSS"],
   },

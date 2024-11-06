@@ -8,8 +8,8 @@ interface ProjectsProps {
 
 export default function Projects({ projects }: ProjectsProps) {
   return (
-    <div>
-      <h2 className="text-4xl font-semibold mt-20 mb-8">Projects</h2>
+    <div id="projects" className="mt-20 mb-10">
+      <h2 className="text-4xl font-semibold  mb-8">Projects</h2>
       {projects.map((project, index) => {
         return <Project key={index} project={project} />;
       })}

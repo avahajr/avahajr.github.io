@@ -16,8 +16,6 @@ export default function NavbarComponent() {
     siteConfig.navItems[0]
   );
 
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-
   const handleSectionChange = (nav: { href: string; label: string }) => {
     setCurrentSection(nav);
     window.location.href = nav.href;
@@ -40,12 +38,16 @@ export default function NavbarComponent() {
     <Navbar
       isBordered
       className="mx-auto pt-14 pb-14 sm:pt-8 sm:pb-8"
-      onMenuOpenChange={setIsMenuOpen}
     >
       <div className="flex mx-auto" id="me">
         <div className="block">
           <NavbarBrand className="gap-5 flex mx-auto">
-            <Avatar radius="full" size="lg" src="ava.png" />
+            <Avatar
+              alt="Ava in central park"
+              radius="full"
+              size="lg"
+              src="ava.png"
+            />
             <div className="flex flex-col gap-1 items-start justify-center">
               <h3 className="text-lg font-semibold leading-none">
                 Ava Hajratwala

@@ -1,7 +1,3 @@
-import { Link } from "@nextui-org/link";
-
-import { siteConfig } from "@/config/site.ts";
-
 export default function About() {
   return (
     <div id="about">

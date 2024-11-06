@@ -1,5 +1,6 @@
 import { Card, CardFooter, CardHeader } from "@nextui-org/card";
 import { Image } from "@nextui-org/image";
+import { Link } from "@nextui-org/link";
 
 import { PortfolioItem } from "@/config/portfolioItems";
 
@@ -9,7 +10,7 @@ interface ProjectProps {
 
 export default function Project({ project }: ProjectProps) {
   return (
-    <Card isHoverable className={"p-2 mt-4"} shadow="sm">
+    <Card isHoverable className={"p-2 mt-8"} shadow="sm">
       <CardHeader className={"block"}>
         <div className={"flex"}>
           {project.tags.map((tag, index) => (
@@ -26,13 +27,19 @@ export default function Project({ project }: ProjectProps) {
         </div>
         <div className="mt-2 text-xl font-semibold">{project.title}</div>
       </CardHeader>
-      {/*<CardBody>*/}
-      {project.image != "" && <Image alt={project.title} src={project.image} />}
-      {/*</CardBody>*/}
+      {project.image != "" && (
+        <Image alt={project.title} className="mx-auto p-2" src={project.image} />
+      )}
       <CardFooter className="flex justify-between">
         <div>{project.description}</div>
         <div>
-          See the demo <i className="bi bi-chevron-down" />
+          <Link
+            isExternal
+            showAnchorIcon
+            href={project.liveUrl || project.demoVideoUrl}
+          >
+            {project.actionPhrase}
+          </Link>
         </div>
       </CardFooter>
     </Card>

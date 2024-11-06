@@ -43,4 +43,4 @@ const portfolioItems: PortfolioItem[] = [
   },
 ];
 
-export { PortfolioItem, portfolioItems };
+export { type PortfolioItem, portfolioItems };

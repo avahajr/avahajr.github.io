@@ -2,7 +2,7 @@ import {
   Navbar,
   NavbarBrand,
   NavbarContent,
-  NavbarItem,
+  NavbarItem
 } from "@nextui-org/navbar";
 import { Button } from "@nextui-org/button";
 import { Avatar } from "@nextui-org/avatar";
@@ -13,7 +13,7 @@ import { siteConfig } from "@/config/site";
 
 export default function NavbarComponent() {
   const [currentActiveSection, setCurrentSection] = useState(
-    siteConfig.navItems[0],
+    siteConfig.navItems[0]
   );
 
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -39,30 +39,32 @@ export default function NavbarComponent() {
   return (
     <Navbar
       isBordered
-      className="p-5 mx-auto pt-10 pb-10 sm:p-auto"
+      className="mx-auto pt-14 pb-14 sm:pt-8 sm:pb-8"
       onMenuOpenChange={setIsMenuOpen}
     >
-      <div className="block h-max sm:h-auto">
-        <NavbarBrand className="gap-5 flex mx-auto">
-          <Avatar radius="full" size="lg" src="ava.png" />
-          <div className="flex flex-col gap-1 items-start justify-center">
-            <h3 className="text-lg font-semibold leading-none">
-              Ava Hajratwala
-            </h3>
-            <div className="text-sm">
-              Software Engineer
-              <span className="text-default-400"> @ WBAR Radio</span>
+      <div className="flex mx-auto" id="me">
+        <div className="block">
+          <NavbarBrand className="gap-5 flex mx-auto">
+            <Avatar radius="full" size="lg" src="ava.png" />
+            <div className="flex flex-col gap-1 items-start justify-center">
+              <h3 className="text-lg font-semibold leading-none">
+                Ava Hajratwala
+              </h3>
+              <div className="text-sm">
+                Software Engineer
+                <span className="text-default-400"> @ WBAR Radio</span>
+              </div>
+              <div className="flex text-xs">
+                <i className="bi bi-mortarboard pr-1" />
+                <div>Columbia University</div>
+                <i className="bi bi-dot" />
+                <div>Dec 2024</div>
+              </div>
             </div>
-            <div className="flex text-xs">
-              <i className="bi bi-mortarboard pr-1" />
-              <div>Columbia University</div>
-              <i className="bi bi-dot" />
-              <div>Dec 2024</div>
-            </div>
+          </NavbarBrand>
+          <div className={"flex justify-between mt-4 sm:hidden"}>
+            {menuItems}
           </div>
-        </NavbarBrand>
-        <div className={"flex justify-between mt-4 sm:hidden"}>
-          {menuItems}
         </div>
       </div>
       <NavbarContent className="hidden sm:flex" justify={"end"}>

@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { Card, CardFooter, CardHeader } from "@nextui-org/card";
 import { Image } from "@nextui-org/image";
 import { Link } from "@nextui-org/link";
@@ -9,8 +10,16 @@ interface ProjectProps {
 }
 
 export default function Project({ project }: ProjectProps) {
+  const [showVideo, setShowVideo] = useState(false);
+
   return (
-    <Card isHoverable className={"p-2 mt-8"} shadow="sm">
+    <Card
+      isHoverable
+      className={"p-2 mt-8"}
+      shadow="sm"
+      onMouseEnter={() => setShowVideo(true)}
+      onMouseLeave={() => setShowVideo(false)}
+    >
       <CardHeader className={"block"}>
         <div className={"flex"}>
           {project.tags.map((tag, index) => (
@@ -27,9 +36,22 @@ export default function Project({ project }: ProjectProps) {
         </div>
         <div className="mt-2 text-xl font-semibold">{project.title}</div>
       </CardHeader>
-      {project.image != "" && (
-        <Image alt={project.title} className="mx-auto p-2" src={project.image} />
-      )}
+      <video
+        autoPlay
+        loop
+        preload="auto"
+        className="mx-auto p-2"
+        src={project.previewVideo}
+        hidden={!showVideo}
+      >
+        <track kind="captions" label="English" src="" srcLang="en" />
+      </video>
+      <Image
+        alt={project.title}
+        className="mx-auto p-2"
+        src={project.coverImage}
+        hidden={showVideo}
+      />
       <CardFooter className="flex justify-between">
         <div>{project.description}</div>
         <div>

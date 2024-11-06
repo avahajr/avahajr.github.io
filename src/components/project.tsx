@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { Card, CardFooter, CardHeader } from "@nextui-org/card";
 import { Image } from "@nextui-org/image";
 import { Link } from "@nextui-org/link";
@@ -11,6 +11,13 @@ interface ProjectProps {
 
 export default function Project({ project }: ProjectProps) {
   const [showVideo, setShowVideo] = useState(false);
+  const videoRef = useRef<HTMLVideoElement>(null);
+
+  const handleVideoPlay = () => {
+    if (videoRef.current && videoRef.current.paused) {
+      videoRef.current.controls = true;
+    }
+  };
 
   return (
     <Card
@@ -37,12 +44,15 @@ export default function Project({ project }: ProjectProps) {
         <div className="mt-2 text-xl font-semibold">{project.title}</div>
       </CardHeader>
       <video
+        ref={videoRef}
         autoPlay
         loop
+        muted
         className="mx-auto p-2"
         hidden={!showVideo}
         preload="auto"
         src={project.previewVideo}
+        onPlay={handleVideoPlay}
       >
         <track kind="captions" label="English" src="" srcLang="en" />
       </video>

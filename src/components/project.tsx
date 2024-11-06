@@ -17,7 +17,7 @@ export default function Project({ project }: ProjectProps) {
       isHoverable
       className={"p-2 mt-8"}
       shadow="sm"
-      onMouseEnter={() => setShowVideo(true)}
+      onMouseEnter={() => project.previewVideo && setShowVideo(true)}
       onMouseLeave={() => setShowVideo(false)}
     >
       <CardHeader className={"block"}>
@@ -39,18 +39,18 @@ export default function Project({ project }: ProjectProps) {
       <video
         autoPlay
         loop
-        preload="auto"
         className="mx-auto p-2"
-        src={project.previewVideo}
         hidden={!showVideo}
+        preload="auto"
+        src={project.previewVideo}
       >
         <track kind="captions" label="English" src="" srcLang="en" />
       </video>
       <Image
         alt={project.title}
         className="mx-auto p-2"
-        src={project.coverImage}
         hidden={showVideo}
+        src={project.coverImage}
       />
       <CardFooter className="flex justify-between">
         <div>{project.description}</div>

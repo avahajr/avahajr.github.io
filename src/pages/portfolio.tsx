@@ -6,10 +6,10 @@ interface ProjectsProps {
   projects: PortfolioItem[];
 }
 
-export default function Projects({ projects }: ProjectsProps) {
+export default function Portfolio({ projects }: ProjectsProps) {
   return (
-    <div id="projects" className="mt-20 mb-10">
-      <h2 className="text-4xl font-semibold  mb-8">Projects</h2>
+    <div className="mt-20 mb-10" id="portfolio">
+      <h2 className="text-4xl font-semibold  mb-8">Portfolio</h2>
       {projects.map((project, index) => {
         return <Project key={index} project={project} />;
       })}

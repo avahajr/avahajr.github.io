@@ -25,7 +25,7 @@ const portfolioItems: PortfolioItem[] = [
     demoVideoUrl: "",
     repoUrl: "",
     actionPhrase: "Watch the demo",
-    image: "flight-simulator.png",
+    image: "",
     tags: ["Unity", "C#", "Arduino"],
   },
   {
@@ -44,7 +44,7 @@ const portfolioItems: PortfolioItem[] = [
     liveUrl: "https://avahajr.github.io/dj-kit/",
     repoUrl: "https://github.com/avahajr/dj-kit",
     actionPhrase: "Try it out",
-    image: "dj-kit.png",
+    image: "",
     tags: ["React", "Next.js", "Tailwind CSS"],
   },
 ];

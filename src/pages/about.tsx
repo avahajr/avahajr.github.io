@@ -1,8 +1,8 @@
 export default function About() {
   return (
     <div id="about">
-      <h1 className="text-4xl font-semibold mb-8">Hi, I&#39;m Ava.</h1>
-      <p className="text-lg">
+      <h1 className="text-4xl sm:text-5xl font-semibold mb-8">Hi, I&#39;m Ava.</h1>
+      <p className="text-xl">
         I’m a recent Columbia grad with{" "}
         <span className="font-semibold">proven leadership experience</span>,{" "}
         <span className={"font-semibold"}>excellent communication skills</span>,

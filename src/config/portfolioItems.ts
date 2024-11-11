@@ -16,20 +16,21 @@ const portfolioItems: PortfolioItem[] = [
     description: "The official website for WBAR Radio.",
     liveUrl: "https://wbar.org",
     repoUrl: "https://github.com/wbar-radio/wbar-app",
-    coverImage: "wbar.org/cover.png",
+    coverImage: "wbar.org/cover1.png",
+    previewVideo: "wbar.org/preview.webm",
     actionPhrase: "Listen",
-    tags: ["React", "Express.js", "SQL"],
+    tags: ["React", "Express.js", "MYSQL"]
   },
   {
     title: "Flight Simulator",
-    description: "A flight simulator built with Unity and C#.",
+    description: "A flight simulator built with an ESP-32 and the Unity game engine.",
     demoVideoUrl:
       "https://www.youtube.com/embed/JOeE-m3F6E4?si=GDFrqUCKHh7AKdTv",
     repoUrl: "https://github.com/avahajr/serial-flight-sim",
     actionPhrase: "Watch the demo",
     coverImage: "flight-simulator/cover.png",
     previewVideo: "flight-simulator/preview.webm",
-    tags: ["Unity", "C#", "Arduino"],
+    tags: ["Arduino", "Unity", "C#", "C++"]
   },
   {
     title: "Privacy Helper",
@@ -37,8 +38,8 @@ const portfolioItems: PortfolioItem[] = [
       "A GPT-powered tool for helping users understand the policies they sign.",
     repoUrl: "https://github.com/avahajr/privacy-helper",
     coverImage: "privacy-helper/cover.png",
-    actionPhrase: "Watch the demo",
-    tags: ["React", "Flask", "OpenAI API", "Bootstrap CSS"],
+    actionPhrase: "See the repo",
+    tags: ["React", "Flask", "OpenAI API", "Bootstrap CSS"]
   },
   {
     title: "WebAudio DJ",
@@ -47,8 +48,8 @@ const portfolioItems: PortfolioItem[] = [
     repoUrl: "https://github.com/avahajr/dj-kit",
     actionPhrase: "Try it out",
     coverImage: "webaudio-dj/cover.png",
-    tags: ["React", "Next.js", "Tailwind CSS"],
-  },
+    tags: ["React", "WebAudio API"]
+  }
 ];
 
 export { type PortfolioItem, portfolioItems };

@@ -1,8 +1,30 @@
 import { Link } from "@nextui-org/link";
+import Typed from "typed.js";
+import { useEffect, useRef } from "react";
 
 import { siteConfig } from "@/config/site.ts";
 
 export default function About() {
+  const typedRef = useRef<HTMLSpanElement>(null);
+
+  useEffect(() => {
+    const typed = new Typed(typedRef.current!, {
+      strings: [
+        "design and maintain backend systems.",
+        "build responsive React components.",
+        "ensure webstream security.",
+        "wear every hat.",
+      ],
+      typeSpeed: 50,
+      backSpeed: 25,
+      loop: true,
+    });
+
+    return () => {
+      typed.destroy();
+    };
+  });
+
   return (
     <section
       className="min-h-screen flex flex-col justify-center pt-10"
@@ -19,8 +41,8 @@ export default function About() {
         <span className="font-semibold">cutting-edge technologies</span>.
       </p>
       <p className="text-xl mt-8">
-        I&#39;m currently a software engineer at WBAR Radio, where I wear
-        (almost) every hat.
+        I&#39;m currently a software engineer at WBAR Radio, where I{" "}
+        <span ref={typedRef} className="font-medium" id="typed" />
       </p>
       <Link
         isExternal

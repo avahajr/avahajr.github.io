@@ -68,7 +68,7 @@ export default function Project({ project }: ProjectProps) {
           <Link
             isExternal
             showAnchorIcon
-            href={project.liveUrl || project.demoVideoUrl}
+            href={project.liveUrl || project.demoVideoUrl || project.repoUrl}
           >
             {project.actionPhrase}
           </Link>

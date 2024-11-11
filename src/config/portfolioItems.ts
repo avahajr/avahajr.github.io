@@ -19,18 +19,19 @@ const portfolioItems: PortfolioItem[] = [
     coverImage: "wbar.org/cover1.png",
     previewVideo: "wbar.org/preview.webm",
     actionPhrase: "Listen",
-    tags: ["React", "Express.js", "MYSQL"]
+    tags: ["React", "Express.js", "MYSQL"],
   },
   {
     title: "Flight Simulator",
-    description: "A flight simulator built with an ESP-32 and the Unity game engine.",
+    description:
+      "A flight simulator built with an ESP-32, the Unity game engine, and pure determination.",
     demoVideoUrl:
       "https://www.youtube.com/embed/JOeE-m3F6E4?si=GDFrqUCKHh7AKdTv",
     repoUrl: "https://github.com/avahajr/serial-flight-sim",
     actionPhrase: "Watch the demo",
     coverImage: "flight-simulator/cover.png",
     previewVideo: "flight-simulator/preview.webm",
-    tags: ["Arduino", "Unity", "C#", "C++"]
+    tags: ["Arduino", "Unity", "C#", "C++"],
   },
   {
     title: "Privacy Helper",
@@ -39,7 +40,7 @@ const portfolioItems: PortfolioItem[] = [
     repoUrl: "https://github.com/avahajr/privacy-helper",
     coverImage: "privacy-helper/cover.png",
     actionPhrase: "See the repo",
-    tags: ["React", "Flask", "OpenAI API", "Bootstrap CSS"]
+    tags: ["React", "Flask", "OpenAI API", "Bootstrap CSS"],
   },
   {
     title: "WebAudio DJ",
@@ -48,8 +49,8 @@ const portfolioItems: PortfolioItem[] = [
     repoUrl: "https://github.com/avahajr/dj-kit",
     actionPhrase: "Try it out",
     coverImage: "webaudio-dj/cover.png",
-    tags: ["React", "WebAudio API"]
-  }
+    tags: ["React", "WebAudio API"],
+  },
 ];
 
 export { type PortfolioItem, portfolioItems };

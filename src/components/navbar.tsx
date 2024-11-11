@@ -18,18 +18,18 @@ export default function NavbarComponent() {
   );
 
   const sectionIds = siteConfig.navItems.map((nav) => nav.href.slice(1));
-  const sections = sectionIds.map((id) => document.getElementById(id));
-  const [currentIntersectingElementIndex] = useScrollspy(sections, { offset: 100 });
+  const sections = sectionIds
+    .map((id) => document.getElementById(id))
+    .filter((el): el is HTMLElement => el !== null);
+  const [currentIntersectingElementIndex] = useScrollspy(sections, {
+    offset: 475,
+  });
 
   useEffect(() => {
     if (currentIntersectingElementIndex !== -1) {
       setCurrentSection(siteConfig.navItems[currentIntersectingElementIndex]);
     }
   }, [currentIntersectingElementIndex]);
-
-  const handleSectionChange = (nav: { href: string; label: string }) => {
-    setCurrentSection(nav);
-  };
 
   const menuItems = siteConfig.navItems.map((nav) => (
     <NavbarItem key={nav.label}>
@@ -39,7 +39,6 @@ export default function NavbarComponent() {
         color={"secondary"}
         href={nav.href}
         variant={nav.label === currentActiveSection.label ? "shadow" : "flat"}
-        onClick={() => handleSectionChange(nav)}
       >
         {nav.label}
       </Button>
@@ -47,7 +46,11 @@ export default function NavbarComponent() {
   ));
 
   return (
-    <Navbar isBordered className="mx-auto pt-14 pb-14 sm:pt-8 sm:pb-8">
+    <Navbar
+      isBordered
+      className="mx-auto pt-14 pb-14 sm:pt-8 sm:pb-8"
+      id="navbar"
+    >
       <div className="flex mx-auto">
         <div className="block">
           <NavbarBrand className="gap-5 flex mx-auto">

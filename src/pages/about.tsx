@@ -1,6 +1,6 @@
 export default function About() {
   return (
-    <section className="min-h-screen pt-48 sm:pt-40" id="about">
+    <section className="min-h-screen pt-80 sm:pt-72" id="about">
       <h1 className="text-5xl sm:text-7xl font-semibold mb-8">
         Hi, I&#39;m Ava.
       </h1>

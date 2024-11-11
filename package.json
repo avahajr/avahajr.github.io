@@ -1,5 +1,5 @@
 {
-  "name": "vite-template",
+  "name": "ava-website",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -9,7 +9,7 @@
     "lint": "eslint -c .eslintrc.json ./src/**/**/*.{ts,tsx} --fix",
     "preview": "vite preview",
     "predeploy": "npm run lint && npm run build",
-    "deploy": "gh-pages -d dist"
+    "deploy": "gh-pages -d dist -r github-pages"
   },
   "dependencies": {
     "@nextui-org/avatar": "^2.0.33",

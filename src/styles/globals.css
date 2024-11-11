@@ -8,3 +8,7 @@
     position:fixed;
     top:0;
 }
+
+#contact {
+    min-height: 90vh;
+}

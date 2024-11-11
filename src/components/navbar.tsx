@@ -71,7 +71,7 @@ export default function NavbarComponent() {
               </h3>
               <div className="text-sm">
                 Software Engineer
-                <span className="text-default-400"> @ WBAR Radio</span>
+                <span className="text-default-500"> @ WBAR Radio</span>
               </div>
               <div className="flex text-xs">
                 <i className="bi bi-mortarboard pr-1" />

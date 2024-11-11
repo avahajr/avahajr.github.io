@@ -1,6 +1,13 @@
+import { Link } from "@nextui-org/link";
+
+import { siteConfig } from "@/config/site.ts";
+
 export default function About() {
   return (
-    <section className="min-h-screen flex flex-col justify-center pt-10" id="about">
+    <section
+      className="min-h-screen flex flex-col justify-center pt-10"
+      id="about"
+    >
       <h1 className="text-6xl sm:text-7xl font-semibold mb-8">
         Hi, I&#39;m Ava.
       </h1>
@@ -15,6 +22,14 @@ export default function About() {
         I&#39;m currently a software engineer at WBAR Radio, where I wear
         (almost) every hat.
       </p>
+      <Link
+        isExternal
+        showAnchorIcon
+        className="text-2xl mt-20"
+        href={siteConfig.resume}
+      >
+        Resume
+      </Link>
     </section>
   );
 }

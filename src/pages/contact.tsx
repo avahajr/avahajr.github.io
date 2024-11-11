@@ -1,16 +1,40 @@
+import { Link } from "@nextui-org/link";
+
+import { siteConfig } from "@/config/site.ts";
+
 export default function Contact() {
+  const titles = ["GitHub", "LinkedIn", "Email"];
+
   return (
-    <section className="min-h-screen flex flex-col justify-center pt-20" id="contact">
+    <section
+      className="min-h-screen flex flex-col justify-center pt-16"
+      id="contact"
+    >
       <div className="text-7xl font-semibold">Like what you see?</div>
-      <div className="text-lg mt-4">
-        <p>Let&#39;s talk about your next project.</p>
-        <p>Send me an email at:</p>
-        <a
-          className="text-blue-500 hover:underline"
-          href="mailto:avahajr@gmail.com"
+
+      <div className="text-xl mt-4">
+        <p className="mb-8">Stay up-to-date on my other projects. </p>
+
+        <div className="flex gap-2.5">
+          {siteConfig.links.map((link, i) => (
+            <Link
+              key={link.platform}
+              isExternal
+              className="text-4xl"
+              href={link.href}
+            >
+              <i className={`bi bi-${link.platform}`} title={titles[i]} />
+            </Link>
+          ))}
+        </div>
+        <Link
+          isExternal
+          showAnchorIcon
+          className="text-xl mt-8"
+          href={siteConfig.resume}
         >
-          avahajr@gmail.com
-        </a>
+          Resume
+        </Link>
       </div>
     </section>
   );

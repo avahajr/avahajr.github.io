@@ -6,15 +6,26 @@ import {
 } from "@nextui-org/navbar";
 import { Button } from "@nextui-org/button";
 import { Avatar } from "@nextui-org/avatar";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Link } from "@nextui-org/link";
 
 import { siteConfig } from "@/config/site";
+import useScrollspy from "@/hooks/use-scrollspy.ts";
 
 export default function NavbarComponent() {
   const [currentActiveSection, setCurrentSection] = useState(
     siteConfig.navItems[0],
   );
+
+  const sectionIds = siteConfig.navItems.map((nav) => nav.href.slice(1));
+  const sections = sectionIds.map((id) => document.getElementById(id));
+  const [currentIntersectingElementIndex] = useScrollspy(sections, { offset: 100 });
+
+  useEffect(() => {
+    if (currentIntersectingElementIndex !== -1) {
+      setCurrentSection(siteConfig.navItems[currentIntersectingElementIndex]);
+    }
+  }, [currentIntersectingElementIndex]);
 
   const handleSectionChange = (nav: { href: string; label: string }) => {
     setCurrentSection(nav);
@@ -25,8 +36,8 @@ export default function NavbarComponent() {
       <Button
         key={nav.label}
         as={Link}
-        href={nav.href}
         color={"secondary"}
+        href={nav.href}
         variant={nav.label === currentActiveSection.label ? "shadow" : "flat"}
         onClick={() => handleSectionChange(nav)}
       >

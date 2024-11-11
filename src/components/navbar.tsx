@@ -13,17 +13,22 @@ import { siteConfig } from "@/config/site";
 import useScrollspy from "@/hooks/use-scrollspy.ts";
 
 export default function NavbarComponent() {
+  const [sections, setSections] = useState<HTMLElement[]>([]);
+  const [currentIntersectingElementIndex] = useScrollspy(sections, {
+    offset: 200,
+  });
   const [currentActiveSection, setCurrentSection] = useState(
     siteConfig.navItems[0],
   );
 
-  const sectionIds = siteConfig.navItems.map((nav) => nav.href.slice(1));
-  const sections = sectionIds
-    .map((id) => document.getElementById(id))
-    .filter((el): el is HTMLElement => el !== null);
-  const [currentIntersectingElementIndex] = useScrollspy(sections, {
-    offset: 475,
-  });
+  useEffect(() => {
+    const sectionIds = siteConfig.navItems.map((nav) => nav.href.slice(1));
+    const selectedSections = sectionIds
+      .map((id) => document.getElementById(id))
+      .filter((el): el is HTMLElement => el !== null);
+
+    setSections(selectedSections);
+  }, [siteConfig.navItems]);
 
   useEffect(() => {
     if (currentIntersectingElementIndex !== -1) {

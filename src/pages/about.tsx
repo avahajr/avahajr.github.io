@@ -47,7 +47,7 @@ export default function About() {
       <Link
         isExternal
         showAnchorIcon
-        className="text-2xl mt-20"
+        className="text-2xl mt-10"
         href={siteConfig.resume}
       >
         Resume

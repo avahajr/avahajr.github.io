@@ -9,7 +9,7 @@
     "lint": "eslint -c .eslintrc.json ./src/**/**/*.{ts,tsx} --fix",
     "preview": "vite preview",
     "predeploy": "npm run lint && npm run build",
-    "deploy": "gh-pages -d dist -r github-pages"
+    "deploy": "gh-pages -d dist"
   },
   "dependencies": {
     "@nextui-org/avatar": "^2.0.33",

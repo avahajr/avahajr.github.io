@@ -1,8 +1,0 @@
-{
-  "files.autoSave": "onWindowChange",
-  "editor.defaultFormatter": "esbenp.prettier-vscode",
-  "editor.formatOnType": true,
-  "html.format.templating": false,
-  "html.format.contentUnformatted": "",
-  "editor.formatOnSave": true
-}

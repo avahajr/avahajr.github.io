@@ -12,7 +12,7 @@ export default function About() {
       strings: [
         "design and maintain backend systems.",
         "build responsive React components.",
-        "ensure webstream security.",
+        "ensure web stream security.",
         "wear every hat.",
       ],
       typeSpeed: 50,
@@ -27,7 +27,7 @@ export default function About() {
 
   return (
     <section
-      className="min-h-screen flex flex-col justify-center pt-10"
+      className="min-h-screen flex flex-col justify-center pt-56 sm:pt-10"
       id="about"
     >
       <h1 className="text-6xl sm:text-7xl font-semibold mb-8">
@@ -42,7 +42,7 @@ export default function About() {
       </p>
       <p className="text-xl mt-8">
         I&#39;m currently a software engineer at WBAR Radio, where I{" "}
-        <span ref={typedRef} className="font-medium" id="typed" />
+        <span ref={typedRef} className="font-medium min-h-80" id="typed" />
       </p>
       <Link
         isExternal

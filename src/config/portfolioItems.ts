@@ -40,7 +40,7 @@ const portfolioItems: PortfolioItem[] = [
     repoUrl: "https://github.com/avahajr/privacy-helper",
     coverImage: "privacy-helper/cover.png",
     actionPhrase: "See the repo",
-    tags: ["React", "Flask", "OpenAI API", "Bootstrap CSS"],
+    tags: ["React", "Flask", "Bootstrap", "GPT-4"],
   },
   {
     title: "WebAudio DJ",

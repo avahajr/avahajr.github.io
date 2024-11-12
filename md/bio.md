@@ -1,4 +1,4 @@
-Hi there! I'm Ava Hajratwala and I'm a computer science major at Barnard College of Columbia University. I'm based in NYC, but I'm originally from just outside of Ann Arbor, Michigan.
+Hi there! I'm Ava Hajratwala and I'm a computer science major in my 3rd year at Barnard College of Columbia University. I'm based in NYC, but I'm originally from just outside of Ann Arbor, Michigan.
 
 I study computer science because I love how self-directed it is. Each new idea (or fundamentals course), regardless of experience level, is a launching point for seemingly endless new skills and projects. When I was a kid, for example, a casual interest in video games led me down a rabbithole to rudimentary game design in Scratch. And now in college, an introductory lesson in computer networking formed the foundation for me teaching myself frontend web development!
 

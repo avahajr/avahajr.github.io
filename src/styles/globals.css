@@ -1,0 +1,14 @@
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+#navbar{
+    position:fixed;
+    top:0;
+}
+
+#contact {
+    min-height: 90vh;
+}

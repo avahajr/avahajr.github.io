@@ -13,13 +13,13 @@ interface PortfolioItem {
 const portfolioItems: PortfolioItem[] = [
   {
     title: "wbar.org",
-    description: "The official website for WBAR Radio.",
+    description: "The official website for WBAR, Barnard College's radio station.",
     liveUrl: "https://wbar.org",
     repoUrl: "https://github.com/wbar-radio/wbar-app",
-    coverImage: "wbar.org/cover1.png",
+    coverImage: "wbar.org/cover.png",
     previewVideo: "wbar.org/preview.webm",
     actionPhrase: "Listen",
-    tags: ["React", "Express.js", "MYSQL"],
+    tags: ["React", "TailwindCSS", "FastAPI", "Supabase", "Vercel"],
   },
   {
     title: "Flight Simulator",

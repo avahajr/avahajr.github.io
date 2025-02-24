@@ -1,4 +1,4 @@
-import { Link } from "@nextui-org/link";
+import { Link } from "@heroui/link";
 import Typed from "typed.js";
 import { useEffect, useRef } from "react";
 

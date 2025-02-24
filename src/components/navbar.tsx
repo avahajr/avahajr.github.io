@@ -3,11 +3,11 @@ import {
   NavbarBrand,
   NavbarContent,
   NavbarItem,
-} from "@nextui-org/navbar";
-import { Button } from "@nextui-org/button";
-import { Avatar } from "@nextui-org/avatar";
+} from "@heroui/navbar";
+import { Button } from "@heroui/button";
+import { Avatar } from "@heroui/avatar";
 import { useState, useEffect } from "react";
-import { Link } from "@nextui-org/link";
+import { Link } from "@heroui/link";
 
 import { siteConfig } from "@/config/site";
 import useScrollspy from "@/hooks/use-scrollspy.ts";

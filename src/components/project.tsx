@@ -1,7 +1,7 @@
 import { useState, useRef } from "react";
-import { Card, CardFooter, CardHeader } from "@nextui-org/card";
-import { Image } from "@nextui-org/image";
-import { Link } from "@nextui-org/link";
+import { Card, CardFooter, CardHeader } from "@heroui/card";
+import { Image } from "@heroui/image";
+import { Link } from "@heroui/link";
 
 import { PortfolioItem } from "@/config/portfolioItems";
 

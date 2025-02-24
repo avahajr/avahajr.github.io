@@ -36,7 +36,8 @@ export default function About() {
         <span className="font-semibold">cutting-edge technologies</span>.
       </p>
       <p className="text-xl mt-8 min-h-24">
-        I&#39;m currently a software engineer at {siteConfig.job.title}, where I{" "}
+        I&#39;m currently a {siteConfig.job.title.toLowerCase()} at{" "}
+        {siteConfig.job.company}, where I{" "}
         <span ref={typedRef} className="font-medium" id="typed" />
       </p>
       <Link

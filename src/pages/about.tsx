@@ -9,12 +9,7 @@ export default function About() {
 
   useEffect(() => {
     const typed = new Typed(typedRef.current!, {
-      strings: [
-        "design and maintain backend systems.",
-        "build responsive React components.",
-        "ensure web stream security.",
-        "wear every hat.",
-      ],
+      strings: siteConfig.job.responsibilities,
       typeSpeed: 50,
       backSpeed: 25,
       loop: true,
@@ -41,7 +36,7 @@ export default function About() {
         <span className="font-semibold">cutting-edge technologies</span>.
       </p>
       <p className="text-xl mt-8 min-h-24">
-        I&#39;m currently a software engineer at WBAR Radio, where I{" "}
+        I&#39;m currently a software engineer at {siteConfig.job.title}, where I{" "}
         <span ref={typedRef} className="font-medium" id="typed" />
       </p>
       <Link

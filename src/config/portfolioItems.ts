@@ -13,7 +13,8 @@ interface PortfolioItem {
 const portfolioItems: PortfolioItem[] = [
   {
     title: "wbar.org",
-    description: "The official website for WBAR, Barnard College's radio station.",
+    description:
+      "The official website for WBAR, Barnard College's radio station.",
     liveUrl: "https://wbar.org",
     repoUrl: "https://github.com/wbar-radio/wbar-app",
     coverImage: "wbar.org/cover.png",

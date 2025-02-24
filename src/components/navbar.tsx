@@ -1,9 +1,4 @@
-import {
-  Navbar,
-  NavbarBrand,
-  NavbarContent,
-  NavbarItem,
-} from "@heroui/navbar";
+import { Navbar, NavbarBrand, NavbarContent, NavbarItem } from "@heroui/navbar";
 import { Button } from "@heroui/button";
 import { Avatar } from "@heroui/avatar";
 import { useState, useEffect } from "react";

@@ -65,8 +65,8 @@ export default function NavbarComponent() {
                 Ava Hajratwala
               </h3>
               <div className="text-sm">
-                Software Engineer
-                <span className="text-default-500"> @ WBAR Radio</span>
+                {siteConfig.job.title}
+                <span className="text-default-500"> @ {siteConfig.job.company}</span>
               </div>
               <div className="flex text-xs">
                 <i className="bi bi-mortarboard pr-1" />

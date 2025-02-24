@@ -1,6 +1,16 @@
 export const siteConfig = {
   name: "Ava Hajratwala",
   description: "Ava Hajratwala's personal website",
+  job: {
+    title: "Software Engineer",
+    company: "WBAR Radio",
+    responsibilities: [
+      "design and maintain backend systems.",
+      "build responsive React components.",
+      "ensure web stream security.",
+      "wear every hat.",
+    ],
+  },
   navItems: [
     {
       label: "About",

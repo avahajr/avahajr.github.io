@@ -35,13 +35,16 @@ const portfolioItems: PortfolioItem[] = [
     tags: ["Arduino", "Unity", "C#", "C++"],
   },
   {
-    title: "Privacy Helper",
+    title: "Privacy Guardian",
     description:
       "A GPT-powered tool for helping users understand the policies they sign.",
-    repoUrl: "https://github.com/avahajr/privacy-helper",
-    coverImage: "privacy-helper/cover.png",
-    actionPhrase: "See the repo",
-    tags: ["React", "Flask", "Bootstrap", "GPT-4"],
+    repoUrl: "https://github.com/avahajr/privacy-guardian",
+    liveUrl: "https://privacy-guardian-ten.vercel.app/",
+    demoVideoUrl: "https://youtu.be/MudcqqNe720",
+    coverImage: "privacy-guardian/cover.png",
+    previewVideo: "privacy-guardian/preview.webm",
+    actionPhrase: "Try it out",
+    tags: ["React", "Flask", "TailwindCSS", "GPT-4"],
   },
   {
     title: "WebAudio DJ",

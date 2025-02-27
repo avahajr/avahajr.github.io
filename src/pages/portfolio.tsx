@@ -14,7 +14,7 @@ export default function Portfolio({ projects }: ProjectsProps) {
     >
       <h2 className="text-6xl font-semibold  mb-8">Portfolio</h2>
       {projects.map((project, index) => {
-        return <Project key={index} project={project} />;
+        return <Project key={`project-${index}`} project={project} />;
       })}
     </section>
   );

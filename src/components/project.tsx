@@ -37,7 +37,9 @@ export default function Project({ project }: ProjectProps) {
             <Fragment key={`tag-dot-${index}`}>
               <span key={`tag-${index}`}>{tag}</span>
               {index !== project.tags.length - 1 && (
-                <span key={`dot-${index}`} className="text-gray-500">•</span>
+                <span key={`dot-${index}`} className="text-gray-500">
+                  •
+                </span>
               )}
             </Fragment>
           ))}

@@ -1,7 +1,8 @@
-import { useState, useRef, Fragment } from "react";
+import { Fragment } from "react";
 import { Card, CardFooter, CardHeader } from "@heroui/card";
-import { Image } from "@heroui/image";
 import { Link } from "@heroui/link";
+import { Spinner } from "@heroui/spinner";
+import HoverVideoPlayer from "react-hover-video-player";
 
 import { PortfolioItem } from "@/config/portfolioItems";
 
@@ -10,23 +11,12 @@ interface ProjectProps {
 }
 
 export default function Project({ project }: ProjectProps) {
-  const [showVideo, setShowVideo] = useState(false);
-  const videoRef = useRef<HTMLVideoElement>(null);
-
-  const handleVideoPlay = () => {
-    if (videoRef.current && videoRef.current.paused) {
-      videoRef.current.controls = true;
-    }
-  };
+  const overlayImage = (
+    <img alt={project.title} className="mx-auto p-2" src={project.coverImage} />
+  );
 
   return (
-    <Card
-      isHoverable
-      className={"p-2 mt-8"}
-      shadow="sm"
-      onMouseEnter={() => project.previewVideo && setShowVideo(true)}
-      onMouseLeave={() => setShowVideo(false)}
-    >
+    <Card isHoverable className={"p-2 mt-8"} shadow="sm">
       <CardHeader className={"block"}>
         <div
           className={
@@ -46,25 +36,22 @@ export default function Project({ project }: ProjectProps) {
         </div>
         <div className="mt-2 text-xl font-semibold">{project.title}</div>
       </CardHeader>
-      <video
-        ref={videoRef}
-        autoPlay
-        loop
-        muted
-        className="mx-auto p-2"
-        hidden={!showVideo}
-        preload="auto"
-        src={project.previewVideo}
-        onPlay={handleVideoPlay}
-      >
-        <track kind="captions" label="English" src="" srcLang="en" />
-      </video>
-      <Image
-        alt={project.title}
-        className="mx-auto p-2"
-        hidden={showVideo}
-        src={project.coverImage}
-      />
+      {project.previewVideo ? (
+        <HoverVideoPlayer
+          loop
+          muted
+          className="mx-auto p-2"
+          loadingOverlay={<Spinner />}
+          pausedOverlay={overlayImage}
+          preload="auto"
+          style={{ borderRadius: "0.5rem" }}
+          videoSrc={project.previewVideo}
+        >
+          <track kind="captions" label="English" src="" srcLang="en" />
+        </HoverVideoPlayer>
+      ) : (
+        overlayImage
+      )}
       <CardFooter className="flex justify-between items-end">
         <div className={"w-2/3"}>{project.description}</div>
         <div>

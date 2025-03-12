@@ -5,12 +5,11 @@ if [ -f .env ]; then
   export $(cat .env | xargs)
 else
   echo ".env file not found!"
-  exit 1
 fi
 
 # Check if the token is set
 if [ -z "$GITHUB_PAT" ]; then
-  echo "GITHUB_PAT is not set in the .env file!"
+  echo "GITHUB_PAT is not set in the environment!"
   exit 1
 fi
 

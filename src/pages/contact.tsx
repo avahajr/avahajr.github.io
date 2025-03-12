@@ -2,10 +2,9 @@ import { Link } from "@heroui/link";
 
 import useResume from "@/hooks/use-resume.ts";
 import { siteConfig } from "@/config/site.ts";
-import {profileIcons} from "@/components/icons.tsx";
+import { profileIcons } from "@/components/icons.tsx";
 
 export default function Contact() {
-
   return (
     <section
       className="min-h-screen flex flex-col justify-center pt-16"

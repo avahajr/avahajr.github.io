@@ -1,6 +1,7 @@
 import { Link } from "@heroui/link";
 import Typed from "typed.js";
 import { useEffect, useRef } from "react";
+
 import useResume from "@/hooks/use-resume.ts";
 import { siteConfig } from "@/config/site.ts";
 

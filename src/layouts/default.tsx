@@ -19,7 +19,11 @@ export default function DefaultLayout({
         <span className="text-default-600">Made with</span>
         <i className="text-red-400 bi bi-heart-fill px-1" />
         <span className="text-default-600 ">by</span>
-        <Link isExternal href={siteConfig.profiles[0].href} title="Ava's GitHub">
+        <Link
+          isExternal
+          href={siteConfig.profiles[0].href}
+          title="Ava's GitHub"
+        >
           <p className="text-primary">Ava</p>
         </Link>
       </footer>

@@ -74,5 +74,3 @@ export const profileIcons = [
   <i key={2} className={"i-mdi-linkedin text-2xl"} />,
   <i key={3} className={"i-mdi-email-outline text-2xl"} />,
 ];
-
-

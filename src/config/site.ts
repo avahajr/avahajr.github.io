@@ -25,10 +25,25 @@ export const siteConfig = {
       href: "#contact",
     },
   ],
-  links: [
-    { platform: "github", href: "https://github.com/avahajr" },
-    { platform: "linkedin", href: "https://www.linkedin.com/in/avahajr" },
-    { platform: "envelope", href: "mailto:avahajr@gmail.com" },
+  profiles: [
+    {
+      icon: "i-mdi-github",
+      title: "GitHub",
+      href: "https://github.com/avahajr",
+      handle: "@avahajr",
+    },
+    {
+      icon: "i-mdi-linkedin",
+      title: "LinkedIn",
+      handle: "/in/avahajr",
+      href: "https://www.linkedin.com/in/avahajr",
+    },
+    {
+      icon: "i-mdi-email-outline",
+      title: "Email",
+      href: "mailto:avahajr@gmail.com",
+      handle: "avahajr@gmail.com",
+    },
   ],
   resume:
     "https://github.com/avahajr/avahajr/blob/main/Ava_Hajratwala_resume.pdf",

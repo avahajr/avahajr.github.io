@@ -1,7 +1,7 @@
 import { Link } from "@heroui/link";
 import Typed from "typed.js";
 import { useEffect, useRef } from "react";
-
+import useResume from "@/hooks/use-resume.ts";
 import { siteConfig } from "@/config/site.ts";
 
 export default function About() {
@@ -29,7 +29,7 @@ export default function About() {
         Hi, I&#39;m Ava.
       </h1>
       <p className="text-2xl sm:text-3xl">
-        I’m a recent Columbia grad with{" "}
+        I&#39;m a recent Columbia grad with{" "}
         <span className="font-semibold">proven leadership experience</span>,{" "}
         <span className="font-semibold">excellent communication skills</span>,
         and a passion for developing new features using{" "}
@@ -44,7 +44,7 @@ export default function About() {
         isExternal
         showAnchorIcon
         className="text-2xl mt-10"
-        href={siteConfig.resume}
+        onPress={useResume}
       >
         Resume
       </Link>

@@ -42,9 +42,10 @@ export default function Project({ project }: ProjectProps) {
           muted
           className="mx-auto p-2"
           loadingOverlay={<Spinner />}
+          loadingOverlayWrapperStyle={{ borderRadius: "0.5rem" }}
           pausedOverlay={overlayImage}
+          pausedOverlayWrapperStyle={{ borderRadius: "0.5rem" }}
           preload="auto"
-          style={{ borderRadius: "0.5rem" }}
           videoSrc={project.previewVideo}
         >
           <track kind="captions" label="English" src="" srcLang="en" />

@@ -1,40 +1,48 @@
 import { Link } from "@heroui/link";
 
+import useResume from "@/hooks/use-resume.ts";
 import { siteConfig } from "@/config/site.ts";
+import {profileIcons} from "@/components/icons.tsx";
 
 export default function Contact() {
-  const titles = ["GitHub", "LinkedIn", "Email"];
 
   return (
     <section
       className="min-h-screen flex flex-col justify-center pt-16"
       id="contact"
     >
-      <div className="text-7xl font-semibold">Like what you see?</div>
+      <div className={"flex"}>
+        <div className={"flex flex-col "}>
+          <div className="text-7xl font-semibold">Like what you see?</div>
+          <div className="text-xl mt-4">
+            <p className="mb-8">Get in touch on these platforms.</p>
 
-      <div className="text-xl mt-4">
-        <p className="mb-8">Stay up-to-date on my other projects. </p>
-
-        <div className="flex gap-2.5">
-          {siteConfig.links.map((link, i) => (
+            <ul className={"ml-2 w-fit"}>
+              {siteConfig.profiles.map((profile, i) => (
+                <li key={profile.icon} className={"mb-1.5 w-fit"}>
+                  <Link
+                    key={profile.icon}
+                    isExternal
+                    className="text-default-500 flex gap-1"
+                    href={profile.href}
+                    title={"Ava's " + profile.title}
+                  >
+                    {profileIcons[i]}
+                    <span>{profile.handle}</span>
+                  </Link>
+                </li>
+              ))}
+            </ul>
             <Link
-              key={link.platform}
-              isExternal
-              className="text-4xl"
-              href={link.href}
+              showAnchorIcon
+              className="text-xl mt-8"
+              href={"#"}
+              onPress={useResume}
             >
-              <i className={`bi bi-${link.platform}`} title={titles[i]} />
+              Resume
             </Link>
-          ))}
+          </div>
         </div>
-        <Link
-          isExternal
-          showAnchorIcon
-          className="text-xl mt-8"
-          href={siteConfig.resume}
-        >
-          Resume
-        </Link>
       </div>
     </section>
   );

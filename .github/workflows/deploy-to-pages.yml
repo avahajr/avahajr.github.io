@@ -18,11 +18,6 @@ jobs:
                   node-version: 'latest'
             - name: Install dependencies
               run: npm install
-            - name: Build
-              run: |
-                npm run build
-                echo '**** Build completed!'
-                ls
             - name: Configure Git
               run: |
                 git config --global user.name 'github-actions[bot]'

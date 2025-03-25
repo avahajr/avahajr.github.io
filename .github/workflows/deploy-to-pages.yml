@@ -8,7 +8,10 @@ jobs:
     deploy:
         runs-on: ubuntu-latest
         steps:
-            - uses: actions/checkout@v2
+            - name: Checkout repository
+              uses: actions/checkout@v2
+              with:
+                token: ${{ secrets.PUBLISH_PORTFOLIO }}
             - name: Setup Node.js
               uses: actions/setup-node@v4
               with:

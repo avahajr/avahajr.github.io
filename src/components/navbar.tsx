@@ -6,7 +6,6 @@ import { Link } from "@heroui/link";
 
 import { siteConfig } from "@/config/site";
 import useScrollspy from "@/hooks/use-scrollspy.ts";
-// import {ThemeSwitch} from "@/components/theme-switch.tsx";
 
 export default function NavbarComponent() {
   const [sections, setSections] = useState<HTMLElement[]>([]);
@@ -31,6 +30,10 @@ export default function NavbarComponent() {
       setCurrentSection(siteConfig.navItems[currentIntersectingElementIndex]);
     }
   }, [currentIntersectingElementIndex]);
+
+  useEffect(() => {
+    document.title = `Ava Hajratwala - ${currentActiveSection.label}`;
+  }, [currentActiveSection]);
 
   const menuItems = siteConfig.navItems.map((nav) => (
     <NavbarItem key={nav.label}>
@@ -88,7 +91,6 @@ export default function NavbarComponent() {
       <NavbarContent className="hidden sm:flex" justify={"end"}>
         {menuItems}
       </NavbarContent>
-      {/*<ThemeSwitch/>*/}
     </Navbar>
   );
 }

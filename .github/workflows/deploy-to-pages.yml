@@ -19,11 +19,19 @@ jobs:
             - name: Install dependencies
               run: npm install
             - name: Build
-              run: npm run build
+              run: |
+                npm run build
+                echo '**** Build completed!'
+                ls
             - name: Configure Git
               run: |
                 git config --global user.name 'github-actions[bot]'
                 git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+            - name: Setup GitHub token
+              env:
+                GITHUB_TOKEN: ${{ secrets.PUBLISH_PORTFOLIO }}
+              run: |
+                git remote set-url origin https://x-access-token:${GITHUB_TOKEN}@github.com/${{ github.repository }}
             - name: Deploy
               env:
                 GITHUB_PAT: ${{ secrets.READ_RESUME_PAT }}

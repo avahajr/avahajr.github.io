@@ -22,12 +22,19 @@ export default function Contact() {
                   <Link
                     key={profile.icon}
                     isExternal
-                    className="text-default-500 flex gap-1"
+                    className="text-default-500 flex gap-1 group"
                     href={profile.href}
                     title={"Ava's " + profile.title}
                   >
                     {profileIcons[i]}
-                    <span>{profile.handle}</span>
+                    <div>
+                      {profile.handle}
+                      <div
+                        className={
+                          "bg-default-500 h-[1.5px] w-0 group-hover:w-full transition-all duration-500"
+                        }
+                      />
+                    </div>
                   </Link>
                 </li>
               ))}

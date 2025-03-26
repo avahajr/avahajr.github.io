@@ -30,4 +30,4 @@ jobs:
             - name: Deploy
               env:
                 GITHUB_PAT: ${{ secrets.READ_RESUME_PAT }}
-              run: npm run deploy
+              run: npm run deploy -- -m "${{ github.event.head_commit.message }}"

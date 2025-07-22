@@ -6,7 +6,7 @@ import { Link } from "@heroui/link";
 
 import { siteConfig } from "@/config/site";
 import useScrollspy from "@/hooks/use-scrollspy.ts";
-import {ThemeSwitch} from "@/components/theme-switch.tsx";
+import { ThemeSwitch } from "@/components/theme-switch.tsx";
 
 export default function NavbarComponent() {
   const [sections, setSections] = useState<HTMLElement[]>([]);
@@ -91,7 +91,7 @@ export default function NavbarComponent() {
       </div>
       <NavbarContent className="hidden sm:flex" justify={"end"}>
         {menuItems}
-        <ThemeSwitch/>
+        <ThemeSwitch />
       </NavbarContent>
     </Navbar>
   );

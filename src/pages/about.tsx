@@ -7,6 +7,7 @@ import { siteConfig } from "@/config/site.ts";
 
 export default function About() {
   const typedRef = useRef<HTMLSpanElement>(null);
+  const deemphasize: string = "dark:opacity-90";
 
   useEffect(() => {
     const typed = new Typed(typedRef.current!, {
@@ -30,10 +31,14 @@ export default function About() {
         Hi, I&#39;m Ava.
       </h1>
       <p className="text-2xl sm:text-3xl">
-        I&#39;m a recent Columbia grad with{" "}
-        <span className="font-semibold">proven leadership experience</span>,{" "}
-        <span className="font-semibold">excellent communication skills</span>,
-        and a passion for developing new features using{" "}
+        <span className={deemphasize}>
+          I&#39;m a recent Columbia grad with{" "}
+        </span>
+        <span className="font-semibold">proven leadership experience, </span>
+        <span className="font-semibold">excellent communication skills, </span>
+        <span className={deemphasize}>
+          and a passion for developing new features using{" "}
+        </span>
         <span className="font-semibold">cutting-edge technologies</span>.
       </p>
       <p className="text-xl mt-8 min-h-24">

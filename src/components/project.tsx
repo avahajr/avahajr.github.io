@@ -25,11 +25,17 @@ export default function Project({ project }: ProjectProps) {
         >
           {project.tags.map((tag, index) => (
             <Fragment key={`tag-dot-${index}`}>
-              <span key={`tag-${index}`} className={"opacity-80 dark:opacity-50"}>
+              <span
+                key={`tag-${index}`}
+                className={"opacity-80 dark:opacity-50"}
+              >
                 {tag}
               </span>
               {index !== project.tags.length - 1 && (
-                <span key={`dot-${index}`} className="text-dark-500 opacity-50 dark:opacity-70">
+                <span
+                  key={`dot-${index}`}
+                  className="text-dark-500 opacity-50 dark:opacity-70"
+                >
                   •
                 </span>
               )}

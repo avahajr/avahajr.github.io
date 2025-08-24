@@ -48,8 +48,8 @@ export default function Project({ project }: ProjectProps) {
         <HoverVideoPlayer
           loop
           muted
-          className="mx-auto p-2"
-          loadingOverlay={<Spinner />}
+          className="flex mx-auto p-2"
+          loadingOverlay={<Spinner className={"w-full h-full"} />}
           loadingOverlayWrapperStyle={{ borderRadius: "0.5rem" }}
           pausedOverlay={overlayImage}
           pausedOverlayWrapperStyle={{ borderRadius: "0.5rem" }}

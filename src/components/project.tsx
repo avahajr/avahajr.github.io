@@ -49,7 +49,12 @@ export default function Project({ project }: ProjectProps) {
           loop
           muted
           className="flex mx-auto p-2"
-          loadingOverlay={<Spinner className={"w-full h-full"} />}
+          loadingOverlay={
+            <Spinner
+              className={"w-full h-full backdrop-blur-[1px]"}
+              color={"white"}
+            />
+          }
           loadingOverlayWrapperStyle={{ borderRadius: "0.5rem" }}
           pausedOverlay={overlayImage}
           pausedOverlayWrapperStyle={{ borderRadius: "0.5rem" }}

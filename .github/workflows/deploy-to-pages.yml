@@ -25,30 +25,30 @@ jobs:
           name: playwright-report
           path: playwright-report/
           retention-days: 30
-    deploy:
-        needs: test
-        runs-on: ubuntu-latest
-        steps:
-            - name: Checkout repository
-              uses: actions/checkout@v2
-              with:
-                token: ${{ secrets.PUBLISH_PORTFOLIO }}
-            - name: Setup Node.js
-              uses: actions/setup-node@v4
-              with:
-                  node-version: 'latest'
-            - name: Install dependencies
-              run: npm install
-            - name: Configure Git
-              run: |
-                git config --global user.name 'github-actions[bot]'
-                git config --global user.email 'github-actions[bot]@users.noreply.github.com'
-            - name: Setup GitHub token
-              env:
-                GITHUB_TOKEN: ${{ secrets.PUBLISH_PORTFOLIO }}
-              run: |
-                git remote set-url origin https://x-access-token:${GITHUB_TOKEN}@github.com/${{ github.repository }}
-            - name: Deploy
-              env:
-                GITHUB_PAT: ${{ secrets.READ_RESUME_PAT }}
-              run: npm run deploy -- -m "${{ github.event.head_commit.message }}"
+  deploy:
+      needs: test
+      runs-on: ubuntu-latest
+      steps:
+          - name: Checkout repository
+            uses: actions/checkout@v2
+            with:
+              token: ${{ secrets.PUBLISH_PORTFOLIO }}
+          - name: Setup Node.js
+            uses: actions/setup-node@v4
+            with:
+                node-version: 'latest'
+          - name: Install dependencies
+            run: npm install
+          - name: Configure Git
+            run: |
+              git config --global user.name 'github-actions[bot]'
+              git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+          - name: Setup GitHub token
+            env:
+              GITHUB_TOKEN: ${{ secrets.PUBLISH_PORTFOLIO }}
+            run: |
+              git remote set-url origin https://x-access-token:${GITHUB_TOKEN}@github.com/${{ github.repository }}
+          - name: Deploy
+            env:
+              GITHUB_PAT: ${{ secrets.READ_RESUME_PAT }}
+            run: npm run deploy -- -m "${{ github.event.head_commit.message }}"

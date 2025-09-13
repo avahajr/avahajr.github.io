@@ -1,18 +1,28 @@
 import { test, expect } from '@playwright/test';
 
-test('has title', async ({ page }) => {
-  await page.goto('https://playwright.dev/');
+test('resume link leads to valid PDF', async ({ page }) => {
+  // Navigate to your website
+  await page.goto('/');
 
-  // Expect a title "to contain" a substring.
-  await expect(page).toHaveTitle(/Playwright/);
-});
+  const resumeLink = await page.getByRole('link', { name: /resume/i });
 
-test('get started link', async ({ page }) => {
-  await page.goto('https://playwright.dev/');
+  // Ensure the resume link exists
+  expect(resumeLink).toBeVisible()
 
-  // Click the get started link.
-  await page.getByRole('link', { name: 'Get started' }).click();
+  // Create a listener for the response
+  const [response] = await Promise.all([
+    page.waitForResponse(response =>
+      response.url().includes('resume') &&
+      response.status() === 200
+    ),
+    resumeLink.click()
+  ]);
 
-  // Expects page to have a heading with the name of Installation.
-  await expect(page.getByRole('heading', { name: 'Installation' })).toBeVisible();
+  // Check if the response headers indicate PDF content
+  const contentType = response.headers()['content-type'];
+  expect(contentType).toMatch(/application\/pdf/i);
+
+  // Verify the response body is not empty
+  const buffer = await response.body();
+  expect(buffer.length).toBeGreaterThan(0);
 });

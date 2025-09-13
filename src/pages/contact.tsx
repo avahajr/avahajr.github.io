@@ -1,6 +1,5 @@
 import { Link } from "@heroui/link";
 
-import useResume from "@/hooks/use-resume.ts";
 import { siteConfig } from "@/config/site.ts";
 import { profileIcons } from "@/components/icons.tsx";
 
@@ -42,8 +41,7 @@ export default function Contact() {
             <Link
               showAnchorIcon
               className="text-xl mt-8"
-              href={"#"}
-              onPress={useResume}
+              href={siteConfig.resume}
             >
               Resume
             </Link>

@@ -45,8 +45,7 @@ export const siteConfig = {
       handle: "avahajr@gmail.com",
     },
   ],
-  resume:
-    "https://github.com/avahajr/avahajr/blob/main/Ava_Hajratwala_resume.pdf",
+  resume: "Ava_Hajratwala_resume.pdf",
   skills: [
     "React",
     "TypeScript",

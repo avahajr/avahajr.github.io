@@ -2,7 +2,6 @@ import { Link } from "@heroui/link";
 import Typed from "typed.js";
 import { useEffect, useRef } from "react";
 
-import useResume from "@/hooks/use-resume.ts";
 import { siteConfig } from "@/config/site.ts";
 
 export default function About() {
@@ -50,7 +49,7 @@ export default function About() {
         isExternal
         showAnchorIcon
         className="text-2xl mt-10"
-        onPress={useResume}
+        href={siteConfig.resume}
       >
         Resume
       </Link>

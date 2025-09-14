@@ -43,6 +43,7 @@ export default function NavbarComponent() {
         as={Link}
         color={"secondary"}
         href={nav.href}
+        role={"button"}
         variant={nav.label === currentActiveSection.label ? "shadow" : "flat"}
       >
         {nav.label}
@@ -84,11 +85,13 @@ export default function NavbarComponent() {
               </div>
             </div>
           </NavbarBrand>
+          {/*Mobile menu*/}
           <div className={"flex justify-between mt-4 sm:hidden"}>
             {menuItems}
           </div>
         </div>
       </div>
+      {/*Non-mobile menu*/}
       <NavbarContent className="hidden sm:flex" justify={"end"}>
         {menuItems}
         <ThemeSwitch />

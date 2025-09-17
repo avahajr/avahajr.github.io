@@ -26,25 +26,27 @@ export default function About() {
       className="min-h-screen flex flex-col justify-center pt-56 sm:pt-10"
       id="about"
     >
-      <h1 className="text-6xl sm:text-7xl font-semibold mb-8">
-        Hi, I&#39;m Ava.
-      </h1>
-      <p className="text-2xl sm:text-3xl">
-        <span className={deemphasize}>
-          I&#39;m a recent Columbia grad with{" "}
-        </span>
-        <span className="font-semibold">proven leadership experience, </span>
-        <span className="font-semibold">excellent communication skills, </span>
-        <span className={deemphasize}>
-          and a passion for developing new features using{" "}
-        </span>
-        <span className="font-semibold">cutting-edge technologies</span>.
-      </p>
-      <p className="text-xl mt-8 min-h-24">
-        I&#39;m currently a {siteConfig.job.title.toLowerCase()} at{" "}
-        {siteConfig.job.company}, where I{" "}
-        <span ref={typedRef} className="font-medium" id="typed" />
-      </p>
+      <div className={"flex flex-col gap-8"}>
+        <h1 className="text-6xl sm:text-7xl font-semibold">
+          Hi, I&#39;m Ava.
+        </h1>
+        <p className="text-3xl sm:text-4xl">
+          <span className={deemphasize}>
+            I&#39;m a recent Columbia grad passionate about{" "}
+          </span>
+          <span className="font-semibold"> user-centered design{" "}</span>
+          <span className={deemphasize}>and building things{" "}</span>
+          <span className="font-semibold">
+            from the ground up
+          </span>
+          .
+        </p>
+        <p className=" text-lg sm:text-xl min-h-24 mt-4">
+          I&#39;m currently a {siteConfig.job.title.inASentence} at{" "}
+          {siteConfig.job.company}, where I{" "}
+          <span ref={typedRef} className="font-medium" id="typed" />
+        </p>
+      </div>
       <Link
         isExternal
         showAnchorIcon

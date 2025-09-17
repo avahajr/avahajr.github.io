@@ -2,7 +2,10 @@ export const siteConfig = {
   name: "Ava Hajratwala",
   description: "Ava Hajratwala's personal website",
   job: {
-    title: "Software Engineer",
+    title: {
+      capitalized: "Software Engineer",
+      inASentence: "software engineer",
+    },
     company: "WBAR Radio",
     responsibilities: [
       "design and maintain backend systems.",

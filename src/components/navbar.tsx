@@ -71,7 +71,7 @@ export default function NavbarComponent() {
                 Ava Hajratwala
               </h3>
               <div className="text-sm">
-                {siteConfig.job.title}
+                {siteConfig.job.title.capitalized}
                 <span className="text-default-500">
                   {" "}
                   @ {siteConfig.job.company}

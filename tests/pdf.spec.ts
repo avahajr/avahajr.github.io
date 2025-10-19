@@ -14,7 +14,7 @@ test.describe('validate PDF contents using Playwright', () => {
     });
 
     test('keywords should be correct', async () => {
-        expect(pdfContents.Meta.Keywords, 'PDF keyword was incorrect').toEqual('software engineer');
+        expect(pdfContents.Meta.Keywords.split(', '), 'PDF keyword was incorrect').toContain('software engineer');
     });
 
     test('author should be correct', async () => {

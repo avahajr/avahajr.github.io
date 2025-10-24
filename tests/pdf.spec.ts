@@ -1,7 +1,9 @@
 import { Text } from 'pdf2json';
 import PDFParser from 'pdf2json';
-import { test, expect } from '@playwright/test';
+import { test, expect } from './fixtures';
 import { siteConfig } from '../src/config/site'
+
+
 
 test.describe('validate PDF contents using Playwright', () => {
     let pdfContents: any

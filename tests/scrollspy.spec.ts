@@ -1,4 +1,4 @@
-import { test, expect } from '@playwright/test';
+import { test, expect } from './fixtures';
 
 // each link in the navbar that you click (if it's visible) should scroll to the correct section
 

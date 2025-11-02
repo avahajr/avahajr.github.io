@@ -10,7 +10,7 @@ interface PortfolioItem {
   tags: string[];
 }
 
-const portfolioItems: PortfolioItem[] = [
+const portfolio: PortfolioItem[] = [
   {
     title: "wbar.org",
     description:

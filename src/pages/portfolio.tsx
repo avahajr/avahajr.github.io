@@ -1,4 +1,4 @@
-import { PortfolioItem } from "../config/portfolioItems";
+import { PortfolioItem } from "../config/portfolio.ts";
 
 import Project from "@/components/project.tsx";
 

@@ -4,7 +4,7 @@ import { Link } from "@heroui/link";
 import { Spinner } from "@heroui/spinner";
 import HoverVideoPlayer from "react-hover-video-player";
 
-import { PortfolioItem } from "@/config/portfolioItems";
+import { PortfolioItem } from "@/config/portfolio.ts";
 
 interface ProjectProps {
   project: PortfolioItem;

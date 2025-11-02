@@ -47,14 +47,16 @@ const portfolio: PortfolioItem[] = [
     tags: ["React", "Flask", "TailwindCSS", "GPT-4"],
   },
   {
-    title: "WebAudio DJ",
-    description: "DJ Kit built with the WebAudio API and React.",
-    liveUrl: "https://avahajr.github.io/dj-kit/",
-    repoUrl: "https://github.com/avahajr/dj-kit",
-    actionPhrase: "Try it out",
-    coverImage: "webaudio-dj/cover.png",
-    tags: ["React", "WebAudio API"],
+    title: "Evolutionary Lunar Lander",
+    description:
+      'Developing novel genetic algorithms, which learn "reward-hacking" techniques to solve classic RL problems in new ways.',
+    liveUrl: "lunar-lander/sri-poster.pdf",
+    repoUrl: ".",
+    actionPhrase: "See poster",
+    previewVideo: "lunar-lander/lunar-lander-upscaled.webm",
+    coverImage: "lunar-lander/lunar-lander-upscaled.png",
+    tags: ["Reinforcement Learning", "Parallel computing", "Python"],
   },
 ];
 
-export { type PortfolioItem, portfolioItems };
+export { type PortfolioItem, portfolio };

@@ -26,8 +26,7 @@ const portfolio: PortfolioItem[] = [
     title: "Flight Simulator",
     description:
       "A flight simulator built with an ESP-32, the Unity game engine, and pure determination.",
-    demoVideoUrl:
-      "https://www.youtube.com/embed/JOeE-m3F6E4?si=GDFrqUCKHh7AKdTv",
+    demoVideoUrl: "https://www.youtube.com/watch?v=JOeE-m3F6E4",
     repoUrl: "https://github.com/avahajr/serial-flight-sim",
     actionPhrase: "Watch the demo",
     coverImage: "flight-simulator/cover.png",

@@ -1,9 +1,5 @@
-import { Link } from "@heroui/link";
-
-import Navbar from "../components/navbar";
-
-import { siteConfig } from "@/config/site.ts";
-
+import Navbar from "@/components/navbar";
+import Footer from "@/components/Footer.tsx";
 export default function DefaultLayout({
   children,
 }: {
@@ -15,18 +11,7 @@ export default function DefaultLayout({
       <main className="container mx-auto max-w-[57rem] px-6 flex-grow">
         {children}
       </main>
-      <footer className="w-full flex items-center justify-center py-3 gap-1">
-        <span className="text-default-600">Made with</span>
-        <i className="text-red-400 bi bi-heart-fill px-1" />
-        <span className="text-default-600 ">by</span>
-        <Link
-          isExternal
-          href={siteConfig.profiles[0].href}
-          title="Ava's GitHub"
-        >
-          <p className="text-primary">Ava</p>
-        </Link>
-      </footer>
+      <Footer />
     </div>
   );
 }

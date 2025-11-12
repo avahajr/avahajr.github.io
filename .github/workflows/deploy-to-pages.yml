@@ -48,6 +48,9 @@ jobs:
               GITHUB_TOKEN: ${{ secrets.PUBLISH_PORTFOLIO }}
             run: |
               git remote set-url origin https://x-access-token:${GITHUB_TOKEN}@github.com/${{ github.repository }}
+          - name: Record deployment timestamp
+            run: |
+              date +%s > src/config/deploy-timestamp.json
           - name: Deploy
             env:
               GITHUB_PAT: ${{ secrets.READ_RESUME_PAT }}

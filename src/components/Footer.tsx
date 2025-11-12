@@ -8,9 +8,7 @@ export default function Footer() {
   const [time, setTime] = useState<Date | null>(null);
 
   useEffect(() => {
-    console.log(deployTimeStamp);
     setTime(new Date(deployTimeStamp * 1000));
-    console.log("Deploy Time Stamp:", time?.toDateString());
   }, []);
 
   return (

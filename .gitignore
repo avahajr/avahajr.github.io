@@ -25,6 +25,7 @@ dist-ssr
 
 .env
 /.vite/
+src/config/deploy-timestamp.json
 
 # Playwright
 /test-results/

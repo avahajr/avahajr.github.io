@@ -2,6 +2,7 @@ import { jobs } from "@/config/experience.ts";
 export const siteConfig = {
   name: "Ava Hajratwala",
   description: "Ava Hajratwala's personal website",
+  sourceRepo: "https://github.com/avahajr/avahajr.github.io",
   job: jobs[0],
   navItems: [
     {

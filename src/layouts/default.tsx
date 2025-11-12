@@ -5,8 +5,12 @@ export default function DefaultLayout({
 }: {
   children: React.ReactNode;
 }) {
+  function getDeploymentData() {}
   return (
-    <div className="relative flex flex-col h-screen">
+    <div
+      onMouseEnter={getDeploymentData}
+      className="relative flex flex-col h-screen"
+    >
       <Navbar />
       <main className="container mx-auto max-w-[57rem] px-6 flex-grow">
         {children}

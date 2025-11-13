@@ -9,44 +9,39 @@ export default function Contact() {
       className="min-h-screen flex flex-col justify-center pt-16"
       id="contact"
     >
-      <div className={"flex"}>
-        <div className={"flex flex-col "}>
-          <div className="text-7xl font-semibold">Like what you see?</div>
-          <div className="text-xl mt-4">
-            <p className="mb-8">Get in touch on these platforms.</p>
-
-            <ul className={"ml-2 w-fit"}>
-              {siteConfig.profiles.map((profile, i) => (
-                <li key={profile.icon} className={"mb-1.5 w-fit"}>
-                  <Link
-                    key={profile.icon}
-                    isExternal
-                    className="text-default-500 flex gap-1 group"
-                    href={profile.href}
-                    title={"Ava's " + profile.title}
-                  >
-                    {profileIcons[i]}
-                    <div>
-                      {profile.handle}
-                      <div
-                        className={
-                          "bg-default-500 h-[1.5px] w-0 group-hover:w-full transition-all duration-500"
-                        }
-                      />
-                    </div>
-                  </Link>
-                </li>
-              ))}
-            </ul>
-            <Link
-              showAnchorIcon
-              className="text-xl mt-8"
-              href={siteConfig.resume}
-            >
-              Resume
-            </Link>
-          </div>
+      <div className={"flex flex-col gap-6"}>
+        <div className="text-6xl md:text-7xl font-semibold">
+          Like what you see?
         </div>
+        <div className={"flex flex-col gap-2"}>
+          <p className={"text-xl"}>Get in touch on these platforms.</p>
+          <ul className={"text-xl ml-2 w-fit"}>
+            {siteConfig.profiles.map((profile, i) => (
+              <li key={profile.icon} className={"mb-1.5 w-fit"}>
+                <Link
+                  key={profile.icon}
+                  isExternal
+                  className="text-default-500 flex gap-1 group"
+                  href={profile.href}
+                  title={"Ava's " + profile.title}
+                >
+                  {profileIcons[i]}
+                  <div>
+                    {profile.handle}
+                    <div
+                      className={
+                        "bg-default-500 h-[1.5px] w-0 group-hover:w-full transition-all duration-500"
+                      }
+                    />
+                  </div>
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </div>
+        <Link showAnchorIcon className="text-xl mt-4" href={siteConfig.resume}>
+          Resume
+        </Link>
       </div>
     </section>
   );

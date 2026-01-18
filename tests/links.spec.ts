@@ -1,23 +1,5 @@
 import { test, expect } from "./fixtures";
 
-test.beforeEach(async ({ context }) => {
-  await context.route("**/*", (request) => {
-    const url = request.request().url();
-    if (
-      // Google Analytics
-      url.startsWith("https://www.googletagmanager.com") ||
-      // Microsoft Clarity
-      url.startsWith("https://www.clarity.ms") ||
-      // Google Adsense
-      url.startsWith("https://pagead2.googlesyndication.com")
-    ) {
-      request.abort();
-    } else {
-      request.continue();
-    }
-  });
-});
-
 test.describe("Link validation", () => {
   test.beforeEach(async ({ page }) => {
     await page.goto("/");

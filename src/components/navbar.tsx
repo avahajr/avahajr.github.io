@@ -79,9 +79,7 @@ export default function NavbarComponent() {
               </div>
               <div className="flex text-xs">
                 <i className="bi bi-mortarboard pr-1" />
-                <div>Columbia University</div>
-                <i className="bi bi-dot" />
-                <div>Dec 2024</div>
+                <div>Barnard College, Columbia University</div>
               </div>
             </div>
           </NavbarBrand>

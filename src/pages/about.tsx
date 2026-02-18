@@ -27,19 +27,14 @@ export default function About() {
       id="about"
     >
       <div className={"flex flex-col gap-8"}>
-        <h1 className="text-6xl sm:text-7xl font-semibold">
-          Hi, I&#39;m Ava.
-        </h1>
+        <h1 className="text-6xl sm:text-7xl font-semibold">Hi, I&#39;m Ava.</h1>
         <p className="text-3xl sm:text-4xl">
           <span className={deemphasize}>
-            I&#39;m a recent Columbia grad passionate about{" "}
+            I&#39;m a full-stack software engineer passionate about{" "}
           </span>
-          <span className="font-semibold"> user-centered design{" "}</span>
-          <span className={deemphasize}>and building things{" "}</span>
-          <span className="font-semibold">
-            from the ground up
-          </span>
-          .
+          <span className="font-semibold"> user-centered design </span>
+          <span className={deemphasize}>and building things </span>
+          <span className="font-semibold">from the ground up</span>.
         </p>
         <p className=" text-lg sm:text-xl min-h-24 mt-4">
           I&#39;m currently a {siteConfig.job.title.inASentence} at{" "}

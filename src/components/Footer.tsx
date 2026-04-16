@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { siteConfig } from "@/config/site.ts";
 import deployTimeStamp from "@/config/deploy-timestamp.json";
 import useTimeAgo from "@/hooks/use-time-ago.ts";
+
 export default function Footer() {
   const [time, setTime] = useState<Date | null>(null);
 
@@ -30,15 +31,16 @@ export default function Footer() {
         </svg>
         <span className={"text-sm"}>
           Last updated{" "}
-          <Link isExternal className={"text-sm"} href={siteConfig.sourceRepo}>
+          <Link
+            className={"text-sm"}
+            href={siteConfig.sourceRepo}
+            rel="noreferrer"
+            target="_blank"
+          >
             {useTimeAgo(time)}
           </Link>{" "}
           by{" "}
-          <Link
-            color={"foreground"}
-            className={"text-sm "}
-            href={siteConfig.profiles[0].href}
-          >
+          <Link className={"text-sm "} href={siteConfig.profiles[0].href}>
             Ava Hajratwala
           </Link>
         </span>

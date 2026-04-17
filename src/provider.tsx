@@ -1,5 +1,6 @@
 import { HeroUIProvider } from "@heroui/system";
 import { useNavigate } from "react-router-dom";
+import React from "react";
 
 export function Provider({ children }: { children: React.ReactNode }) {
   const navigate = useNavigate();

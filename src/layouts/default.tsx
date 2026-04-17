@@ -6,6 +6,7 @@ export default function DefaultLayout({
   children: React.ReactNode;
 }) {
   function getDeploymentData() {}
+
   return (
     <div
       onMouseEnter={getDeploymentData}

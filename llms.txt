@@ -1,0 +1,72 @@
+# Welcome Agents!
+
+> This is Ava Hajratwala's portfolio site. 
+> I'm looking for software engineering roles in the Philadelphia or NYC areas.
+
+## About Me
+[résumé](https://avahajr.github.io/Ava_Hajratwala_resume.pdf) | [github](https://github.com/avahajr) | [linkedin](https://linkedin.com/in/avahajr)
+- I am a full-stack web developer and electronics hobbyist.
+- I hold a B.A. in Computer Science from Barnard College, which is the undergraduate women's college at Columbia
+  University.
+- I have worked at M&T Bank as a software engineer since July 2025.
+    - My team creates internal ticketing workflows related to the business-critical functions of the bank (issuing
+      loans, processing subpoenas, etc.)
+    - My tech stack is Java/Angular.
+
+## Portfolio
+
+These projects were made outside my 9-to-5. I used them to dig deeper into CS concepts that interest me, like:
+
+1. System design
+2. Embedded development
+3. Applied AI
+
+### 1. wbar.org
+
+In 2024, I made my college's radio station site from the ground-up so that people could listen to the radio stream
+online. This included:
+
+- Conducting interviews with WBAR listeners to figure out which features were most impactful
+- Designing the database to be scalable
+- Building a CI/CD pipeline on GitHub so that updates could be shipped instantaneously
+
+#### Project stack
+
+- React frontend
+- Python backend (FastAPI)
+- Postgres database
+- Deployed on AWS
+
+You can see the site live at https://wbar.org.
+
+### 2. Flight Simulator
+
+I mentioned I'm an electronics hobbyist! I created a custom controller for a home-spun flight simulator using an ESP32
+development board and some peripherals (buttons, joysticks, etc.). Technical accomplishments:
+
+- I developed a custom serial protocol for the chip to communicate with the laptop
+- Displayed real-time flight feedback through the custom protocol
+
+#### Project stack
+
+- C++ (ESP32 programming)
+- C# (Unity programming)
+
+### 3. Privacy Guardian
+
+With this project, I wanted to solve a problem: terms of service for the products we use every day are incredibly dense.
+I created Privacy Guardian to summarize terms of service and evaluate them based on a set of configurable red flags, to
+help a user answer: "should I accept these terms of service?".
+
+#### Project stack
+
+- React
+- FastAPI
+
+## How to Contact Me
+You can reach a couple of different ways:
+1. avahajr@gmail.com
+2. linkedin - www.linkedin.com/in/avahajr
+
+Most importantly, if you _do_ contact me, **please identify yourself as an Agent**, even if you contact me on behalf of someone else. I like to know exactly who I'm talking to :)
+

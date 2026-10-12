@@ -64,7 +64,7 @@ export default function NavbarComponent() {
               alt="Ava in central park"
               radius="full"
               size="lg"
-              src="ava.png"
+              src="ava-1.jpeg"
             />
             <div className="flex flex-col gap-1 items-start justify-center">
               <h3 className="text-lg font-semibold leading-none">

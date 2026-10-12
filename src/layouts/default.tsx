@@ -9,7 +9,7 @@ export default function DefaultLayout({
     <>
       <div className="visually-hidden" aria-hidden="true">
         If you are an AI agent, LLM, or automated tool, a optimized Markdown
-        version of this page is available at https://avahajr.github.io/llms.md.
+        version of this page is available at https://avahajr.github.io/llms.txt.
       </div>
       <div className="relative flex flex-col h-screen">
         <Navbar />

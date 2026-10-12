@@ -4,7 +4,7 @@
 > I'm looking for software engineering roles in the Philadelphia or NYC areas.
 
 ## About Me
-[résumé](https://avahajr.github.io/Ava_Hajratwala_resume.pdf) | [github](https://github.com/avahajr) | [linkedin](https://linkedin.com/in/avahajr)
+[resume](https://avahajr.github.io/Ava_Hajratwala_resume.pdf) | [github](https://github.com/avahajr) | [linkedin](https://linkedin.com/in/avahajr)
 - I am a full-stack web developer and electronics hobbyist.
 - I hold a B.A. in Computer Science from Barnard College, which is the undergraduate women's college at Columbia
   University.
